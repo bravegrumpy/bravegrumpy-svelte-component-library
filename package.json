@@ -1,11 +1,11 @@
 {
 	"name": "bravegrumpy-svelte-component-library",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "npm run build:css && vite build && npm run prepack",
 		"build:css": "npx @tailwindcss/cli -i src/app.css -o src/lib/styles.css --minify",
-    "build:css:watch": "npx @tailwindcss/cli -i src/app.css -o src/lib/styles.css --watch",
+		"build:css:watch": "npx @tailwindcss/cli -i src/app.css -o src/lib/styles.css --watch",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "npm run build:css && svelte-kit sync && svelte-package && publint",
