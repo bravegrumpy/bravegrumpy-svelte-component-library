@@ -22,7 +22,7 @@
 <Story name="DefaultLight" args={{ text: 'Light', href: '/', slug: '/other', reversed: false }} />
 <Story
 	name="DefaultDark"
-	args={{ text: 'Dark', href: '/', slug: '/other', reversed: false, class: 'bg:dark' }}
+	args={{ text: 'Dark', href: '/', slug: '/other', reversed: false, class: 'dark' }}
 />
 <Story
 	name="ActiveDefaultLight"
@@ -30,7 +30,7 @@
 />
 <Story
 	name="ActiveDefaultDark"
-	args={{ text: 'Active Dark', href: '/', slug: '/', reversed: false, class: 'bg:dark' }}
+	args={{ text: 'Active Dark', href: '/', slug: '/', reversed: false, class: 'dark' }}
 />
 <Story
 	name="ReversedDefaultLight"
@@ -38,7 +38,13 @@
 />
 <Story
 	name="ReversedDefaultDark"
-	args={{ text: 'Reversed Default Dark', href: '/', slug: '/other', reversed: true, class: 'bg:dark' }}
+	args={{
+		text: 'Reversed Default Dark',
+		href: '/',
+		slug: '/other',
+		reversed: true,
+		class: 'dark'
+	}}
 />
 <Story
 	name="ReversedActiveLight"
@@ -46,5 +52,5 @@
 />
 <Story
 	name="ReversedActiveDark"
-	args={{ text: 'Reversed Active Dark', href: '/', slug: '/', reversed: true, class: 'bg:dark' }}
+	args={{ text: 'Reversed Active Dark', href: '/', slug: '/', reversed: true, class: 'dark' }}
 />

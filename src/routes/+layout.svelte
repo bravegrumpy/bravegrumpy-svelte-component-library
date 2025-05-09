@@ -7,7 +7,7 @@
 	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
 
-	let bodyClass = $state('bg-solarized-base-2 dark:bg-solarized-base-02');
+	let bodyClass = $state('bg:bg-solarized-base-2 bg:dark:bg-solarized-base-02');
 
 	function addBodyClass() {
 		document.body.className = bodyClass;
@@ -31,10 +31,8 @@
 	/>
 </svelte:head>
 
-<div class="m-20 p-20">
-	<Logo />
-	<Navigation slug={currSlug} />
+<Logo />
+<Navigation slug={currSlug} />
 
-	<ThemeToggle />
-</div>
+<ThemeToggle />
 {@render children()}

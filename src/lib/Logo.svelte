@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../app.css';
 	import './styles.css';
 	interface Props {
 		className?: string;
@@ -13,18 +14,24 @@
 	} = $props();
 </script>
 
-<div class="flex flex-col items-center justify-start gap-1 lg:flex-row">
+<div class="bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:sm:items-start items-center">
 	<img
 		src="https://cdn.bravegrumpy.com/static/assets/images/BG_logo.png"
 		alt=""
-		width="80px"
-		height="80px"
-		class="bg:mt-6 bg:self-start bg:rounded-md"
+		class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6"
 	/>
 	<div
-		class={`bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:flex bg:flex-col bg:items-center bg:justify-start bg:gap-2 ${className}`}
+		class="bg:flex bg:flex-col bg:justify-center bg:items-center bg:gap-1 bg:xs:flex-row bg:sm:flex-col bg:sm:w-fit bg:xs:gap-4 bg:xs:items:center bg:sm:gap-0"
 	>
-		<p class="bg:font-logo bg:text-8xl">{logo}</p>
-		<p class="bg:font-logoSubtitle bg:w-[25rem] bg:text-left bg:text-2xl bg:text-wrap">{subtitle}</p>
+		<p
+			class="bg:font-logo bg:text-4xl bg:2xs:text-5xl bg:md:text-6xl bg:lg:text-7xl bg:xl:text-8xl"
+		>
+			{logo}
+		</p>
+		<p
+			class="bg:font-logoSubtitle bg:text-md bg:hidden bg:text-center bg:xs:block bg:xs:text-xs bg:xs:text-center bg:xs:shrink-2 bg:xs:w-40 bg:xs:text-left bg:sm:text-xs bg:sm:w-49 bg:md:text-base bg:md:w-75 bg:lg:w-60 bg:xl:w-82 bg:xl:self-center bg:xl:-ml-4 bg:xl:text-center"
+		>
+			{subtitle}
+		</p>
 	</div>
 </div>

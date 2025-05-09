@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.css';
 	function toggleDarkMode() {
-		document.body.classList.toggle('bg:dark');
+		document.body.classList.toggle('dark');
 	}
 </script>
 
