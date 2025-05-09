@@ -3,11 +3,11 @@
 	import { onMount } from 'svelte';
 
 	import ThemeToggle from '$lib/ThemeToggle.svelte';
-	import Logo from "$lib/Logo.svelte";
-	import { page } from "$app/state";
+	import Logo from '$lib/Logo.svelte';
+	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
 
-	let bodyClass = $state("bg-solarized-base-2 dark:bg-solarized-base-02");
+	let bodyClass = $state('bg-solarized-base-2 dark:bg-solarized-base-02');
 
 	function addBodyClass() {
 		document.body.className = bodyClass;
@@ -23,13 +23,15 @@
 </script>
 
 <svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
-
-<div class="p-20 m-20">
+<div class="m-20 p-20">
 	<Logo />
 	<Navigation slug={currSlug} />
 

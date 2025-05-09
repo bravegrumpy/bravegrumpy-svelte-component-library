@@ -1,27 +1,28 @@
 <script lang="ts">
-    import NavButton from "./NavButton.svelte";
+	import './styles.css';
+	import NavButton from './NavButton.svelte';
 
-    interface Props {}
+	interface Props {}
 
-    const { slug } = $props();
+	const { slug } = $props();
 
-    let i = $state(1)
-    const links = [
-        {
-            id: i++,
-            href: "/",
-            text: "Home",
-        },
-        {
-            id: i++,
-            href: '/about',
-            text: 'About'
-        }
-    ];
+	let i = $state(1);
+	const links = [
+		{
+			id: i++,
+			href: '/',
+			text: 'Home'
+		},
+		{
+			id: i++,
+			href: '/about',
+			text: 'About'
+		}
+	];
 </script>
 
-<nav class="flex flex-col lg:flex-row gap-3">
-    {#each links as link (link.id)}
-        <NavButton slug={slug} href={link.href} text={link.text} />
-    {/each}
+<nav class="flex flex-col gap-3 lg:flex-row">
+	{#each links as link (link.id)}
+		<NavButton {slug} href={link.href} text={link.text} />
+	{/each}
 </nav>
