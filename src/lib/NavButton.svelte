@@ -9,27 +9,27 @@
 	}
 	const { href, text, className = '', slug = '/', reversed = false } = $props();
 	const baseClass = $state(
-		'px-5 py-2 border-5 border-solid hover:hue-rotate-15 hover:scale-105 rounded text-center'
+		'bg:px-5 bg:py-2 bg:border-5 bg:border-solid bg:hover:hue-rotate-15 bg:hover:scale-105 bg:rounded bg:text-center'
 	);
 	const defaultLight = $state(
-		'bg-bravegrumpy-brand1 text-bravegrumpy-accent1a font-navMenuDefault'
+		'bg:bg-bravegrumpy-brand1 bg:text-bravegrumpy-accent1a bg:font-navMenuDefault'
 	);
-	const defaultDark = $state('dark:bg-bravegrumpy-accent1a dark:text-bravegrumpy-logoPurple');
+	const defaultDark = $state('bg:dark:bg-bravegrumpy-accent1a bg:dark:text-bravegrumpy-logoPurple');
 	const activeLight = $state(
-		'data-[active=true]:text-bravegrumpy-highlight1 data-[active=true]:font-navMenuActive'
+		'bg:data-[active=true]:text-bravegrumpy-highlight1 bg:data-[active=true]:font-navMenuActive'
 	);
-	const activeDark = $state('dark:data-[active=true]:text-bravegrumpy-brand1');
+	const activeDark = $state('bg:dark:data-[active=true]:text-bravegrumpy-brand1');
 	const reverseDefaultLight = $state(
-		'data-[reversed=true]:bg-bravegrumpy-accent1a data-[reversed=true]:text-bravegrumpy-logoPurple'
+		'bg:data-[reversed=true]:bg-bravegrumpy-accent1a bg:data-[reversed=true]:text-bravegrumpy-logoPurple'
 	);
 	const reverseDefaultDark = $state(
-		'dark:data-[reversed=true]:bg-bravegrumpy-brand1 dark:data-[reversed=true]:text-bravegrumpy-accent1a'
+		'bg:dark:data-[reversed=true]:bg-bravegrumpy-brand1 bg:dark:data-[reversed=true]:text-bravegrumpy-accent1a'
 	);
 	const reversedActiveLight = $state(
-		'data-[active=true]:data-[reversed=true]:text-bravegrumpy-brand1'
+		'bg:data-[active=true]:data-[reversed=true]:text-bravegrumpy-brand1'
 	);
 	const reversedActiveDark = $state(
-		'dark:data-[active=true]:data-[reversed=true]:text-bravegrumpy-highlight1'
+		'bg:dark:data-[active=true]:data-[reversed=true]:text-bravegrumpy-highlight1'
 	);
 
 	const themeClasses = $derived(

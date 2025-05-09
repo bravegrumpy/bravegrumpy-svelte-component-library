@@ -21,7 +21,7 @@
 	];
 </script>
 
-<nav class="flex flex-col gap-3 lg:flex-row">
+<nav class="bg:flex bg:flex-col bg:gap-3 bg:lg:flex-row">
 	{#each links as link (link.id)}
 		<NavButton {slug} href={link.href} text={link.text} />
 	{/each}

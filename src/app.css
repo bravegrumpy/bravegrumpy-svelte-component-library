@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap');
 
-@import 'tailwindcss';
+@import 'tailwindcss' prefix(bg);
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 

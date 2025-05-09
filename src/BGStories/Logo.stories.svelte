@@ -12,7 +12,7 @@
 			class: {
 				control: {
 					type: 'select',
-					options: ['dark', '']
+					options: ['bg:dark', '']
 				}
 			}
 		},
@@ -21,4 +21,4 @@
 </script>
 
 <Story name="Light" args={{ class: '' }} />
-<Story name="Dark" args={{ class: 'dark' }} />
+<Story name="Dark" args={{ class: 'bg:dark' }} />

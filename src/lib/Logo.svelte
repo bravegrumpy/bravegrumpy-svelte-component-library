@@ -19,12 +19,12 @@
 		alt=""
 		width="80px"
 		height="80px"
-		class="mt-6 self-start rounded-md"
+		class="bg:mt-6 bg:self-start bg:rounded-md"
 	/>
 	<div
-		class={`text-bravegrumpy-logoPurple dark:text-bravegrumpy-accent1a flex flex-col items-center justify-start gap-2 ${className}`}
+		class={`bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:flex bg:flex-col bg:items-center bg:justify-start bg:gap-2 ${className}`}
 	>
-		<p class="font-logo text-8xl">{logo}</p>
-		<p class="font-logoSubtitle w-[25rem] text-left text-2xl text-wrap">{subtitle}</p>
+		<p class="bg:font-logo bg:text-8xl">{logo}</p>
+		<p class="bg:font-logoSubtitle bg:w-[25rem] bg:text-left bg:text-2xl bg:text-wrap">{subtitle}</p>
 	</div>
 </div>
