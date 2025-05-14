@@ -6,10 +6,18 @@
 		slug?: string;
 		reversed?: boolean;
 		className?: string;
+		[key: string]: unknown;
 	}
-	const { href, text, class: className = '', slug = '/', reversed = false } = $props();
+	const {
+		href,
+		text,
+		class: className = '',
+		slug = '/',
+		reversed = false,
+		...props
+	}: Props = $props();
 	const baseClass = $state(
-		'bg:px-5 bg:py-2 bg:border-5 bg:border-solid bg:hover:hue-rotate-15 bg:hover:scale-105 bg:rounded bg:text-center'
+		'bg:px-5 bg:py-2 bg:border-5 bg:border-solid bg:hover:hue-rotate-15 bg:hover:scale-105 bg:rounded bg:text-center bg:w-full bg:sm:w-fit'
 	);
 	const defaultLight = $state(
 		'bg:bg-bravegrumpy-brand1 bg:text-bravegrumpy-accent1a bg:font-navMenuDefault'
@@ -38,6 +46,7 @@
 </script>
 
 <a
+	{...props}
 	{href}
 	data-reversed={reversed}
 	data-active={slug === href}

@@ -14,7 +14,9 @@
 	} = $props();
 </script>
 
-<div class="bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:sm:items-start items-center">
+<div
+	class={`bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:sm:items-start items-center ${className}`}
+>
 	<img
 		src="https://cdn.bravegrumpy.com/static/assets/images/BG_logo.png"
 		alt=""
@@ -29,7 +31,7 @@
 			{logo}
 		</p>
 		<p
-			class="bg:font-logoSubtitle bg:text-md bg:hidden bg:text-center bg:xs:block bg:xs:text-xs bg:xs:text-center bg:xs:shrink-2 bg:xs:w-40 bg:xs:text-left bg:sm:text-xs bg:sm:w-49 bg:md:text-base bg:md:w-75 bg:lg:w-60 bg:xl:w-82 bg:xl:self-center bg:xl:-ml-4 bg:xl:text-center"
+			class="bg:font-logoSubtitle bg:text-md bg:hidden bg:text-center bg:xs:block bg:xs:text-xs bg:xs:text-center bg:xs:shrink-2 bg:xs:w-40 bg:sm:text-xs bg:sm:w-49 bg:md:text-base bg:md:w-75 bg:lg:w-60 bg:xl:w-82 bg:xl:self-center bg:xl:-ml-4 bg:xl:text-center"
 		>
 			{subtitle}
 		</p>

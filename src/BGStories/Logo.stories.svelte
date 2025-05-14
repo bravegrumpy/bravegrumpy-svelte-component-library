@@ -9,16 +9,20 @@
 		component: Logo,
 		tags: ['autodocs'],
 		argTypes: {
-			class: {
-				control: {
-					type: 'select',
-					options: ['bg:dark', '']
-				}
-			}
+			class: { control: 'text' }
 		},
-		args: {}
+		args: {},
+		parameters: {
+			layout: 'centered',
+			backgrounds: {
+				values: [
+					{ name: 'light', value: '#d2c8ff' },
+					{ name: 'dark', value: '#270d3e' }
+				]
+			}
+		}
 	});
 </script>
 
-<Story name="Light" args={{ class: '' }} />
-<Story name="Dark" args={{ class: 'bg:dark' }} />
+<Story name="Light" parameters={{ backgrounds: { default: 'light' } }} />
+<Story name="Dark" args={{ class: 'dark' }} parameters={{ backgrounds: { default: 'dark' } }} />
