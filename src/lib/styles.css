@@ -34,7 +34,6 @@
     --bg-font-navMenuActive: 'Recursive', serif;
     --bg-font-navMenuActive--font-variation-settings: 'MONO' 0.5, 'CASL' 1, 'wght' 900, 'slnt' 0, 'CRSV' 0.5;
     --bg-font-sans--font-variation-settings: 'MONO' 1, 'CASL' 0, 'wght' 400, 'slnt' 0, 'CRSV' 0;
-    --bg-color-affair: #654d86;
     --bg-color-bravegrumpy-brand1: #6e34a2;
     --bg-color-bravegrumpy-brand6: #654d86;
     --bg-color-bravegrumpy-accent1a: #d2c8ff;
@@ -277,9 +276,6 @@
   .bg\:border-solid {
     --tw-border-style: solid;
     border-style: solid;
-  }
-  .bg\:bg-affair {
-    background-color: var(--bg-color-affair);
   }
   .bg\:bg-blue-300 {
     background-color: var(--bg-color-blue-300);
