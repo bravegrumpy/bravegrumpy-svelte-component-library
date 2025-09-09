@@ -14,7 +14,9 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"storybook-docs": "storybook dev --docs",
+		"build-storybook-docs": "storybook build --docs"
 	},
 	"files": [
 		"dist",

@@ -15,7 +15,7 @@
 		parameters: {
 			layout: 'centered',
 			backgrounds: {
-				values: [
+				options: [
 					{ name: 'light', value: '#d2c8ff' },
 					{ name: 'dark', value: '#270d3e' }
 				]
@@ -25,4 +25,13 @@
 </script>
 
 <Story name="Light" parameters={{ backgrounds: { default: 'light' } }} />
-<Story name="Dark" args={{ class: 'dark' }} parameters={{ backgrounds: { default: 'dark' } }} />
+
+<Story 
+	name="Dark" 
+	args={{ class: 'dark' }} 
+	parameters={{ 
+		backgrounds: {
+			default: "dark"
+		}
+	}} 
+/>

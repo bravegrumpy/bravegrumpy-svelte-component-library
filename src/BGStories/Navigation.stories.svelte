@@ -19,7 +19,7 @@
 		parameters: {
 			layout: 'centered',
 			backgrounds: {
-				values: [
+				options: [
 					{ name: 'light', value: '#270d3e' },
 					{ name: 'dark', value: '#d1dcff' },
 					{ name: 'reversed-light', value: '#d2c8ff' },

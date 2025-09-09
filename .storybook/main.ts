@@ -18,6 +18,9 @@ const config: StorybookConfig = {
 	core: {
 		disableTelemetry: true,
 		enableCrashReports: false
-	}
+	},
+  docs: {
+    defaultName: "Documentation"
+  }
 };
 export default config;

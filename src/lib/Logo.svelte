@@ -2,7 +2,7 @@
 	import '../app.css';
 	import './styles.css';
 	interface Props {
-		className?: string;
+		class?: string;
 		logo?: string;
 		subtitle?: string;
 	}
@@ -11,7 +11,7 @@
 		class: className = '',
 		logo = 'Bravegrumpy',
 		subtitle = 'Welcome to my chaotic castle of creativity.  I hope you find some cool stuff.'
-	} = $props();
+	}: Props = $props();
 </script>
 
 <div
