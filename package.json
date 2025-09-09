@@ -82,7 +82,14 @@
 	"keywords": [
 		"svelte",
 		"bravegrumpy",
-		"component library"
+		"component library",
+		"ui",
+		"ux",
+		"ux/ux",
+		"sveltekit",
+		"neobrutalism",
+		"personal website",
+		"neobrutalism components"
 	],
 	"license": "MIT"
 }
