@@ -27,7 +27,7 @@
 		slug?: string;
 		links?: ref[];
 		reversed?: boolean;
-		theme?: 'dark' | '';
+		theme?: 'dark' | '' | null | undefined;
 		className?: string;
 		navId?: string;
 	}
@@ -46,22 +46,22 @@
 	}
 </script>
 
-<div class="bg:bg-blue-300 bg:w-fit">
-<div class="bg:inline bg:sm:hidden">
-	<Button
-		icon="hugeicons:menu-01"
-		onclick={() => {
-			toggleNav();
-		}}
-	/>
-</div>
+	<!-- <div class="bg:inline bg:sm:hidden bg:my-5 bg:bg-yellow-700"> -->
+		<Button
+			icon="hugeicons:menu-01"
+			onclick={() => {
+				toggleNav();
+			}}
+			class="bg:2xs:w-1/2 bg:2xs:mx-auto"
+			iconStyles="bg:mx-auto"
+		/>
+	<!-- </div> -->
 
-<nav
-	id={navId}
-	class={`bg:hidden bg:sm:flex bg:w-[90vw] bg:flex-col bg:gap-3 bg:lg:flex-row ${className} ${theme}`}
->
-	{#each links as link (link.id)}
-		<NavButton {slug} href={link.href} text={link.text} {reversed} />
-	{/each}
-</nav>
-</div>
+	<nav
+		id={navId}
+		class={`bg:hidden bg:sm:flex bg:w-fit bg:flex-col bg:gap-3 bg:lg:flex-row ${className} ${theme}`}
+	>
+		{#each links as link (link.id)}
+			<NavButton {slug} href={link.href} text={link.text} {reversed} />
+		{/each}
+	</nav>

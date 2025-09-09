@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { type HTMLButtonAttributes } from 'svelte/elements';
 
 	import type { Snippet } from 'svelte';
 
-	interface Props {
+	interface Props extends HTMLButtonAttributes {
 		icon?: string | false;
 		children?: Snippet;
-		[key: string]: unknown;
 		className?: string;
 		lightColors?: string;
 		darkColors?: string;
 		shape?: string;
 		iconSize?: string;
-		customStyles?: string;
+		iconStyles?: string;
 	}
 
 	const {
@@ -24,14 +24,15 @@
 		class: customStyles = '',
 		className = `${lightColors} ${darkColors} ${shape} ${customStyles}`,
 		iconSize = 'bg:size-11.5',
+		iconStyles = '',
 		...props
 	}: Props = $props();
 </script>
 
 <button {...props} class={`${className}`}>
 	{#if typeof icon === 'string'}
-		<Icon {icon} class={`bg:p-0 ${iconSize}`} />
+		<Icon {icon} class={`bg:p-0 ${iconSize} ${iconStyles}`} />
 	{/if}
 
-	{@render children?.()}
+	{@render children?.() }
 </button>
