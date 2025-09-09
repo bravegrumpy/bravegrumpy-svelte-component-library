@@ -3,14 +3,14 @@
 	import NavButton from './NavButton.svelte';
 	import Button from './Button.svelte';
 
-	type ref = {
+	export type ref = {
 		id: string | number;
 		href: string;
 		text: string;
 	};
 
 	let i = 1;
-	const exLinks: ref[] = [
+	const exLinks: ref[] = $state([
 		{
 			id: `${i++}_Navigation`,
 			href: '/',
@@ -21,7 +21,7 @@
 			href: '/about',
 			text: 'About'
 		}
-	];
+	]);
 
 	interface Props {
 		slug?: string;
@@ -46,6 +46,7 @@
 	}
 </script>
 
+<div class="bg:bg-blue-300 bg:w-fit">
 <div class="bg:inline bg:sm:hidden">
 	<Button
 		icon="hugeicons:menu-01"
@@ -63,3 +64,4 @@
 		<NavButton {slug} href={link.href} text={link.text} {reversed} />
 	{/each}
 </nav>
+</div>

@@ -15,9 +15,27 @@
 			class: { control: 'text' },
 			theme: { control: 'text' }
 		},
-		args: {},
+		args: {
+			links: [
+				{
+					id: 'home',
+					href: '/',
+					text: 'Home'
+				},
+				{
+					id: 'about',
+					href: '/about',
+					text: 'About'
+				},
+				{
+					id: 'contact-me',
+					href: '/contact',
+					text: 'Contact'
+				}
+			]
+		},
 		parameters: {
-			layout: 'centered',
+			layout: 'right',
 			backgrounds: {
 				options: [
 					{ name: 'light', value: '#270d3e' },
