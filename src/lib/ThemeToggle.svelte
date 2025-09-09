@@ -7,9 +7,12 @@
 		document.body.classList.toggle('dark');
 	}
 
-	interface Props extends HTMLButtonAttributes {}
+	interface Props extends HTMLButtonAttributes {
+		iconSize?: number | string;
+	}
 	const {
 		class: className = '',
+		iconSize = 50,
 		...props
 	}:Props = $props();
 </script>
@@ -22,12 +25,12 @@
 <Button onclick={toggleDarkMode} class={`${className}`} {...props}>
 	<Icon
 		icon="game-icons:evil-moon"
-		width={50}
+		width={iconSize}
 		class="bg:inline bg:scale-100 bg:dark:hidden bg:dark:scale-0"
 	/>
 	<Icon
 		icon="game-icons:sun"
-		width={50}
+		width={iconSize}
 		class="bg:hidden bg:scale-0 bg:dark:inline bg:dark:scale-100"
 	/>
 </Button>

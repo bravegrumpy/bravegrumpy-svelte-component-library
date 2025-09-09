@@ -2,6 +2,7 @@
 	import './styles.css';
 	import NavButton from './NavButton.svelte';
 	import Button from './Button.svelte';
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	export type ref = {
 		id: string | number;
@@ -42,26 +43,28 @@
 	}: Props = $props();
 
 	function toggleNav() {
-		document.getElementById(navId)?.classList.toggle('bg:hidden');
+		document.getElementById(navId)?.classList.toggle('bg:invisible');
 	}
 </script>
 
-	<!-- <div class="bg:inline bg:sm:hidden bg:my-5 bg:bg-yellow-700"> -->
+	<div class="bg:block bg:sm:visible">
 		<Button
 			icon="hugeicons:menu-01"
 			onclick={() => {
 				toggleNav();
 			}}
-			class="bg:2xs:w-1/2 bg:2xs:mx-auto"
+			class="bg:w-fit bg:sm:hidden bg:static bg:right-5"
 			iconStyles="bg:mx-auto"
+			iconSize="bg:size-8"
 		/>
-	<!-- </div> -->
+	</div>
 
 	<nav
 		id={navId}
-		class={`bg:hidden bg:sm:flex bg:w-fit bg:flex-col bg:gap-3 bg:lg:flex-row ${className} ${theme}`}
+		class={`bg:invisible bg:sm:visible bg:sm:flex bg:sm:w-100 bg:w-fit bg:flex-col bg:gap-2 bg:lg:flex-row ${className} ${theme}`}
 	>
 		{#each links as link (link.id)}
-			<NavButton {slug} href={link.href} text={link.text} {reversed} />
+			<NavButton {slug} href={link.href} text={link.text} {reversed} class="bg:h-fit" />
 		{/each}
+		<ThemeToggle class="bg:size-10 bg:mt-1" iconSize="30" />
 	</nav>

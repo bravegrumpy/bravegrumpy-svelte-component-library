@@ -2,7 +2,6 @@
 	import '../app.css';
 	import { onMount } from 'svelte';
 
-	import ThemeToggle from '$lib/ThemeToggle.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
@@ -34,5 +33,4 @@
 <Logo />
 <Navigation slug={currSlug} />
 
-<ThemeToggle />
-{@render children()}
+{@render children?.()} 

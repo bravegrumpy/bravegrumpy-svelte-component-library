@@ -13,6 +13,7 @@
 		shape?: string;
 		iconSize?: string;
 		iconStyles?: string;
+		hoverStyles?: string;
 	}
 
 	const {
@@ -21,8 +22,9 @@
 		lightColors = 'bg:bg-bravegrumpy-accent2a bg:text-bravegrumpy-logoPurple',
 		darkColors = 'bg:dark:bg-bravegrumpy-brand6 bg:dark:text-bravegrumpy-accent1a',
 		shape = 'bg:p-1 bg:border-2 bg:border-solid bg:rounded-sm',
+		hoverStyles = "bg:hover:scale-105 bg:hover:hue-rotate-15",
 		class: customStyles = '',
-		className = `${lightColors} ${darkColors} ${shape} ${customStyles}`,
+		className = `${lightColors} ${darkColors} ${shape} ${hoverStyles} ${customStyles}`,
 		iconSize = 'bg:size-11.5',
 		iconStyles = '',
 		...props
