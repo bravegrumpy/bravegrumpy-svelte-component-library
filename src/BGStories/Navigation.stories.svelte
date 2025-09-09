@@ -8,6 +8,9 @@
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/Navigation',
 		component: Navigation,
+		globals: {
+			backgrounds: { value: 'light' }
+		},
 		tags: ['autodocs'],
 		argTypes: {
 			slug: { control: 'text' },
@@ -37,12 +40,12 @@
 		parameters: {
 			layout: 'right',
 			backgrounds: {
-				options: [
-					{ name: 'light', value: '#270d3e' },
-					{ name: 'dark', value: '#d1dcff' },
-					{ name: 'reversed-light', value: '#d2c8ff' },
-					{ name: 'reversed-dark', value: '#270d3e' }
-				]
+				options: {
+					light: { name: 'light', value: '#270d3e' },
+					dark: { name: 'dark', value: '#d1dcff' },
+					reversedLight: { name: 'reversed-light', value: '#d2c8ff' },
+					reversedDark: { name: 'reversed-dark', value: '#270d3e' }
+				},
 			}
 		}
 	});
@@ -54,9 +57,6 @@
 		slug: '/about',
 		reversed: false
 	}}
-	parameters={{
-		backgrounds: { default: 'light' }
-	}}
 />
 <Story
 	name="DefaultDark"
@@ -65,8 +65,10 @@
 		reversed: false,
 		theme: 'dark'
 	}}
-	parameters={{
-		backgrounds: { default: 'dark' }
+	globals={{
+		backgrounds: {
+			value: 'dark'
+		}
 	}}
 />
 <Story
@@ -75,8 +77,8 @@
 		slug: '/about',
 		reversed: true
 	}}
-	parameters={{
-		backgrounds: { default: 'reversed-light' }
+	globals={{
+		backgrounds: { value: 'reversedLight' }
 	}}
 />
 <Story
@@ -86,7 +88,7 @@
 		reversed: true,
 		theme: 'dark'
 	}}
-	parameters={{
-		backgrounds: { default: 'reversed-dark' }
+	globals={{
+		backgrounds: { value: 'reversedDark' }
 	}}
 />

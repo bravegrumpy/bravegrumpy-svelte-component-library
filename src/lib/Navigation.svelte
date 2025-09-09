@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './styles.css';
+	import type { SvelteHTMLElements } from 'svelte/elements';
 	import NavButton from './NavButton.svelte';
 	import Button from './Button.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
@@ -21,15 +22,16 @@
 			id: i++,
 			href: '/about',
 			text: 'About'
-		}
+		},
 	]);
 
-	interface Props {
+	type NavElementType = SvelteHTMLElements['nav']
+
+	interface Props extends NavElementType {
 		slug?: string;
 		links?: ref[];
 		reversed?: boolean;
 		theme?: 'dark' | '' | null | undefined;
-		className?: string;
 		navId?: string;
 	}
 
@@ -38,33 +40,45 @@
 		links = exLinks,
 		reversed = false,
 		theme = '',
-		className = '',
+		class: className = '',
 		navId = 'navigation'
 	}: Props = $props();
 
+	// function toggleNav() {
+	// 	document.getElementById(navId)?.classList.toggle('bg:invisible');
+	// }
 	function toggleNav() {
-		document.getElementById(navId)?.classList.toggle('bg:invisible');
+		const nav = document.getElementById(navId)
+		if (nav?.classList.contains('bg:hidden')) {
+			nav.classList.remove('bg:hidden')
+			nav.classList.add('bg:flex')
+		} else if (nav?.classList.contains('bg:flex')) {
+			nav.classList.remove('bg:flex')
+			nav.classList.add('bg:hidden')
+		}
 	}
-</script>
 
-	<div class="bg:block bg:sm:visible">
+	const scratch = $state("bg:invisible bg:sm:visible bg:sm:flex bg:sm:w-100 bg:w-fit bg:flex-col bg:gap-2 bg:lg:flex-row ");
+</script>
+	
+	<div class="bg:xs:w-11/12">
 		<Button
 			icon="hugeicons:menu-01"
 			onclick={() => {
 				toggleNav();
 			}}
-			class="bg:w-fit bg:sm:hidden bg:static bg:right-5"
+			class="bg:w-full bg:my-3 bg:sm:w-fit bg:md:hidden"
 			iconStyles="bg:mx-auto"
-			iconSize="bg:size-8"
+			iconSize="bg:size-8 bg:sm:size-10"
 		/>
-	</div>
 
 	<nav
 		id={navId}
-		class={`bg:invisible bg:sm:visible bg:sm:flex bg:sm:w-100 bg:w-fit bg:flex-col bg:gap-2 bg:lg:flex-row ${className} ${theme}`}
+		class={`bg:hidden bg:md:flex bg:md:flex-col bg:lg:flex-row bg:md:flex-wrap bg:flex-col bg:gap-2 ${className} ${theme}`}
 	>
 		{#each links as link (link.id)}
-			<NavButton {slug} href={link.href} text={link.text} {reversed} class="bg:h-fit" />
+			<NavButton {slug} href={link.href} text={link.text} {reversed} class="bg:h-fit bg:md:w-1/3 bg:lg:w-fit" />
 		{/each}
-		<ThemeToggle class="bg:size-10 bg:mt-1" iconSize="30" />
+		<ThemeToggle class="bg:w-full bg:h-15 bg:xs:size-15 bg:self-center bg:sm:size-10 bg:sm:self-start" iconSize="30" />
 	</nav>
+</div>

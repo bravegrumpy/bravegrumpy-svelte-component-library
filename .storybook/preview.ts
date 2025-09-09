@@ -15,6 +15,11 @@ const preview: Preview = {
 			}
 		}
 	},
+	initialGlobals: {
+		backgrounds: {
+			value: 'light'
+		}
+	},
 
 	tags: ['autodocs']
 };

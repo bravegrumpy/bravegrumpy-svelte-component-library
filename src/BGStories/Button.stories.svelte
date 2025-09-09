@@ -7,12 +7,17 @@
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/Button',
 		component: Button,
+		globals: {
+			backgrounds: {
+				value: "light"
+			}
+		},
 		tags: ['autodocs'],
 		argTypes: {
-			icon: { control: 'text' }
+			icon: { control: 'text' },
 		},
 		args: {
-			icon: 'hugeicons:circle'
+			icon: 'hugeicons:circle',
 		}
 	});
 </script>

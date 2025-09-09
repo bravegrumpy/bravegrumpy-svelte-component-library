@@ -7,6 +7,11 @@
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/Logo',
 		component: Logo,
+		globals: {
+			backgrounds: {
+				value: 'light'
+			}
+		},
 		tags: ['autodocs'],
 		argTypes: {
 			class: { control: 'text' }
@@ -15,23 +20,21 @@
 		parameters: {
 			layout: 'centered',
 			backgrounds: {
-				options: [
-					{ name: 'light', value: '#d2c8ff' },
-					{ name: 'dark', value: '#270d3e' }
-				]
-			}
-		}
+				options: {
+					light: { name: 'light', value: '#d2c8ff' },
+					dark: { name: 'dark', value: '#270d3e' },
+				},
+			},
+		},
 	});
 </script>
 
-<Story name="Light" parameters={{ backgrounds: { default: 'light' } }} />
+<Story name="Light" />
 
 <Story 
 	name="Dark" 
 	args={{ class: 'dark' }} 
-	parameters={{ 
-		backgrounds: {
-			default: "dark"
-		}
-	}} 
+	globals={{
+		backgrounds: { value: "dark"}
+	}}
 />

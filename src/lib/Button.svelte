@@ -14,6 +14,7 @@
 		iconSize?: string;
 		iconStyles?: string;
 		hoverStyles?: string;
+		theme?: 'dark' | '';
 	}
 
 	const {
@@ -24,7 +25,8 @@
 		shape = 'bg:p-1 bg:border-2 bg:border-solid bg:rounded-sm',
 		hoverStyles = "bg:hover:scale-105 bg:hover:hue-rotate-15",
 		class: customStyles = '',
-		className = `${lightColors} ${darkColors} ${shape} ${hoverStyles} ${customStyles}`,
+		theme = '',
+		className = `${lightColors} ${darkColors} ${shape} ${hoverStyles} ${customStyles} ${theme}`,
 		iconSize = 'bg:size-11.5',
 		iconStyles = '',
 		...props

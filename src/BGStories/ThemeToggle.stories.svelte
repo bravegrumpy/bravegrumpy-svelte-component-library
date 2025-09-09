@@ -6,10 +6,23 @@
 
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/ThemeToggle',
+		globals: {
+			background: { 
+				value: 'light' 
+			}
+		},
 		component: ThemeToggle,
 		tags: ['autodocs'],
 		argTypes: {},
-		args: {}
+		args: {},
+		parameters: {
+			backgrounds: {
+				options: {
+					light: { name: 'light', value: '#d2c8ff'},
+					dark: { name: 'dark', value: '#270d3e'}
+				},
+			}
+		}
 	});
 </script>
 

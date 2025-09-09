@@ -32,5 +32,4 @@
 
 <Logo />
 <Navigation slug={currSlug} />
-
 {@render children?.()} 
