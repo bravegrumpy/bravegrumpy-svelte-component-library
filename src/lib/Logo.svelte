@@ -1,6 +1,5 @@
 <script lang="ts">
-	import '../app.css';
-	import './styles.css';
+	import '$lib/styles.css';
 	interface Props {
 		class?: string;
 		logo?: string;
