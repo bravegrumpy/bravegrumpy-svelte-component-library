@@ -28,8 +28,8 @@
 		links?: ref[];
 		reversed?: boolean;
 		theme?: 'dark' | '';
-		className: string;
-		navId: string;
+		className?: string;
+		navId?: string;
 	}
 
 	const { slug, links = exLinks, reversed = false, theme = '', className = '', navId="navigation" }: Props = $props();

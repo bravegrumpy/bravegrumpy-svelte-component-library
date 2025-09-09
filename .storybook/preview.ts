@@ -1,7 +1,7 @@
-import type { Preview } from '@storybook/svelte';
+import type { Preview } from '@storybook/sveltekit';
 
 const preview: Preview = {
-	parameters: {
+    parameters: {
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
@@ -14,7 +14,9 @@ const preview: Preview = {
 				{ name: 'dark', value: '#073642' }
 			]
 		}
-	}
+	},
+
+    tags: ['autodocs']
 };
 
 export default preview;

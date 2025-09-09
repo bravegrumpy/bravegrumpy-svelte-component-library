@@ -3,7 +3,7 @@
 	import '$lib/styles.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Navigation from '$lib/Navigation.svelte';
-	import { fn } from '@storybook/test';
+	import { fn } from 'storybook/test';
 
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/Navigation',
