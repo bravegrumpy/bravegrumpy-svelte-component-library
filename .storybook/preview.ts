@@ -1,4 +1,7 @@
-import type { Preview } from '@storybook/sveltekit';
+import type { Preview, SvelteRenderer } from '@storybook/sveltekit';
+import { withThemeByClassName } from "@storybook/addon-themes";
+
+import "../src/app.css"
 
 const preview: Preview = {
 	parameters: {
@@ -15,6 +18,15 @@ const preview: Preview = {
 			}
 		}
 	},
+	decorators: [
+		withThemeByClassName<SvelteRenderer>({
+			themes: {
+				light: '',
+				dark: 'dark'
+			},
+			defaultTheme: 'light'
+		}),
+	],
 	initialGlobals: {
 		backgrounds: {
 			value: 'light'

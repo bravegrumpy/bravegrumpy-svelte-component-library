@@ -1,31 +1,27 @@
 <script module>
+	import '../app.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import Button from './Button.svelte';
+	import Button from '$lib/Button.svelte';
 	import { fn } from 'storybook/test';
 
-	// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 	const { Story } = defineMeta({
-		title: 'Example/Button',
+		title: 'Bravegrumpy/Button',
 		component: Button,
-		tags: ['autodocs'],
-		argTypes: {
-			backgroundColor: { control: 'color' },
-			size: {
-				control: { type: 'select' },
-				options: ['small', 'medium', 'large']
+		globals: {
+			backgrounds: {
+				value: 'light'
 			}
 		},
+		tags: ['autodocs'],
+		argTypes: {
+			icon: { control: 'text' },
+			onclick: { control: 'text' }
+		},
 		args: {
-			onClick: fn()
+			icon: 'hugeicons:circle',
+			onclick: fn()
 		}
 	});
 </script>
 
-<!-- More on writing stories with args: https://storybook.js.org/docs/writing-stories/args -->
-<Story name="Primary" args={{ primary: true, label: 'Button' }} />
-
-<Story name="Secondary" args={{ label: 'Button' }} />
-
-<Story name="Large" args={{ size: 'large', label: 'Button' }} />
-
-<Story name="Small" args={{ size: 'small', label: 'Button' }} />
+<Story name="Default" />
