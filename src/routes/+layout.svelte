@@ -6,7 +6,7 @@
 	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
 
-	let bodyClass = $state('bg:bg-solarized-base-2 bg:dark:bg-solarized-base-02');
+	let bodyClass = $state('bg:bg-solarized-base-2 bg:dark:bg-solarized-base-02 bg:text-bravegrumpy-black bg:dark:text-bravegrumpy-accent2a');
 
 	function addBodyClass() {
 		document.body.className = bodyClass;
@@ -29,6 +29,7 @@
 		rel="stylesheet"
 	/>
 </svelte:head>
+
 
 <Logo />
 <Navigation slug={currSlug} />
