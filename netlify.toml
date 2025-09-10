@@ -1,3 +1,3 @@
 [build]
-command = "npm run build-storybook-docs]
+command = "npm run build-storybook-docs"
 publish = "storybook-static"
