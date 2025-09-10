@@ -9,13 +9,13 @@
 		component: Button,
 		globals: {
 			backgrounds: {
-				value: "light"
+				value: 'light'
 			}
 		},
 		tags: ['autodocs'],
 		argTypes: {
 			icon: { control: 'text' },
-			onclick: { control: 'text'}
+			onclick: { control: 'text' }
 		},
 		args: {
 			icon: 'hugeicons:circle',

@@ -22,19 +22,19 @@
 			backgrounds: {
 				options: {
 					light: { name: 'light', value: '#d2c8ff' },
-					dark: { name: 'dark', value: '#270d3e' },
-				},
-			},
-		},
+					dark: { name: 'dark', value: '#270d3e' }
+				}
+			}
+		}
 	});
 </script>
 
 <Story name="Light" />
 
-<Story 
-	name="Dark" 
-	args={{ class: 'dark' }} 
+<Story
+	name="Dark"
+	args={{ class: 'dark' }}
 	globals={{
-		backgrounds: { value: "dark"}
+		backgrounds: { value: 'dark' }
 	}}
 />

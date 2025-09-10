@@ -7,8 +7,8 @@
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/ThemeToggle',
 		globals: {
-			background: { 
-				value: 'light' 
+			background: {
+				value: 'light'
 			}
 		},
 		component: ThemeToggle,
@@ -18,9 +18,9 @@
 		parameters: {
 			backgrounds: {
 				options: {
-					light: { name: 'light', value: '#d2c8ff'},
-					dark: { name: 'dark', value: '#270d3e'}
-				},
+					light: { name: 'light', value: '#d2c8ff' },
+					dark: { name: 'dark', value: '#270d3e' }
+				}
 			}
 		}
 	});

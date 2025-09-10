@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './styles.css';
 	import { type HTMLAnchorAttributes } from 'svelte/elements';
-	interface Props extends HTMLAnchorAttributes{
+	interface Props extends HTMLAnchorAttributes {
 		text: string;
 		slug?: string;
 		reversed?: boolean;
