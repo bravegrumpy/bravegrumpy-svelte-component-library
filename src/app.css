@@ -3,6 +3,7 @@
 @import 'tailwindcss' prefix(bg);
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "@iconify/tailwind4";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

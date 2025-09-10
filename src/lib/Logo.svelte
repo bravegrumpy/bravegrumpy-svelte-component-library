@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '$lib/styles.css';
-	import type { Snippet } from 'svelte';
+	import type { Snippet, Component } from 'svelte';
 	import type { HTMLAttributes, HTMLImgAttributes } from 'svelte/elements';
 
 	interface Props extends HTMLAttributes<HTMLDivElement>, HTMLAttributes<HTMLParagraphElement> {
@@ -8,7 +8,6 @@
 		subtitle?: string | Snippet;
 		art?: {
 			component?: Snippet;
-			src?: string;
 			img?: HTMLImgAttributes | null;
 		} | null;
 	}
@@ -23,25 +22,18 @@
 
 	let inputLogo = $derived(art?.component);
 	let imgAttrs = $derived({ ...art?.img });
-	let imgSrc = $derived(art?.src);
 </script>
 
 <div
-	class={`bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:sm:items-start items-center ${className}`}
+	class={`bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:sm:items-start bg:items-center ${className}`}
 	{...props}
 >
 	{#if art !== null}
 		{#if inputLogo}
 			{@render inputLogo()}
 		{:else if art.img}
-			<img {...imgAttrs} width="40px" height="40px" />
+			<img {...imgAttrs} class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6" />
 		{/if}
-	{:else if typeof imgSrc === 'string'}
-		<img
-			src={imgSrc}
-			alt=""
-			class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6"
-		/>
 	{:else}
 		<img
 			src="https://cdn.bravegrumpy.com/static/assets/images/BG_logo.png"

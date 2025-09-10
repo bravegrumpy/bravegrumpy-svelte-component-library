@@ -88,7 +88,7 @@
 			/>
 		{/each}
 		<ThemeToggle
-			class="bg:w-full bg:h-15 bg:xs:size-15 bg:self-center bg:sm:size-10 bg:sm:self-start"
+			class="bg:w-full bg:h-15 bg:xs:size-15 bg:self-center bg:sm:size-10 bg:sm:self-start bg:lg:self-center"
 			iconSize="30"
 		/>
 	</nav>

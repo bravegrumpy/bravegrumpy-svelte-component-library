@@ -1,5 +1,5 @@
 import type { Preview, SvelteRenderer } from '@storybook/sveltekit';
-import { withThemeByClassName } from "@storybook/addon-themes";
+import { withThemeByClassName } from "@storybook/addon-themes"
 
 import "../src/app.css"
 
@@ -13,10 +13,16 @@ const preview: Preview = {
 		},
 		backgrounds: {
 			options: {
-				light: { name: 'Light', value: '#eee8d5' },
-				dark: { name: 'Dark', value: '#073642' }
-			}
-		}
+				light: { name: 'Light', value: '#eee8d5'},
+				dark: { name: 'Dark', value: '#073642'},
+				neutral: { name: 'Neutral', value: '#ddd1aa'}
+			},
+		},
+	},
+	initialGlobals: {
+		backgrounds: {
+			value: 'neutral'
+		},
 	},
 	decorators: [
 		withThemeByClassName<SvelteRenderer>({
@@ -27,11 +33,6 @@ const preview: Preview = {
 			defaultTheme: 'light'
 		}),
 	],
-	initialGlobals: {
-		backgrounds: {
-			value: 'light'
-		}
-	},
 
 	tags: ['autodocs']
 };

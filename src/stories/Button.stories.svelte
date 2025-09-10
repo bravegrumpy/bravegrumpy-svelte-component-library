@@ -15,13 +15,20 @@
 		tags: ['autodocs'],
 		argTypes: {
 			icon: { control: 'text' },
-			onclick: { control: 'text' }
+			onclick: { control: 'text' },
+			class: { control: 'text' }
 		},
 		args: {
 			icon: 'hugeicons:circle',
-			onclick: fn()
+			onclick: fn(),
 		}
 	});
 </script>
 
-<Story name="Default" />
+<Story name="Light" />
+
+<Story name="Dark"
+args={{ class: "dark" }}
+globals={{ backgrounds: { value: 'dark' }}}
+
+/>
