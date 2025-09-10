@@ -20,15 +20,11 @@
 		},
 		args: {
 			icon: 'hugeicons:circle',
-			onclick: fn(),
+			onclick: fn()
 		}
 	});
 </script>
 
 <Story name="Light" />
 
-<Story name="Dark"
-args={{ class: "dark" }}
-globals={{ backgrounds: { value: 'dark' }}}
-
-/>
+<Story name="Dark" args={{ class: 'dark' }} globals={{ backgrounds: { value: 'dark' } }} />

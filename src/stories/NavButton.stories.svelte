@@ -24,9 +24,9 @@
 					dark: { name: 'dark', value: '#d1dcff' },
 					reversedLight: { name: 'reversedLight', value: '#d2c8ff' },
 					reversedDark: { name: 'reversedDark', value: '#270d3e' }
-				},
-			},
-		},
+				}
+			}
+		}
 	});
 </script>
 

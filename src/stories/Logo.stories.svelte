@@ -3,7 +3,7 @@
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Logo from '$lib/Logo.svelte';
 	import { fn } from 'storybook/test';
-	import LogoDecorator from "./LogoDecorator.svelte";
+	import LogoDecorator from './LogoDecorator.svelte';
 
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/Logo',
@@ -14,7 +14,7 @@
 		argTypes: {
 			class: {
 				control: 'text',
-				description: 'Tailwind class appended to the container `<div>`',
+				description: 'Tailwind class appended to the container `<div>`'
 			},
 			logo: {
 				control: 'text',
@@ -22,7 +22,7 @@
 			},
 			subtitle: {
 				control: 'text',
-				description: 'text displayed in small lettering',
+				description: 'text displayed in small lettering'
 			},
 			art: {
 				control: 'object',
@@ -30,42 +30,39 @@
 			}
 		},
 		args: {
-			class: "",
-			logo: "BraveGrumpy",
-			subtitle: "Welcome to my chaotic castle of curious creations. I hope find some cool stuff.",
+			class: '',
+			logo: 'BraveGrumpy',
+			subtitle: 'Welcome to my chaotic castle of curious creations. I hope find some cool stuff.',
 			art: null
 		},
 		parameters: {
 			layout: 'centered',
 			backgrounds: {
 				options: {
-					light: { name: 'Light', value: '#d2c8ff'},
-					dark: { name: 'Dark', value: '#270d3e'},
+					light: { name: 'Light', value: '#d2c8ff' },
+					dark: { name: 'Dark', value: '#270d3e' }
 				}
-			},
+			}
 		}
 	});
 </script>
 
-
 <Story name="Default" />
 
 {#snippet inputLogo()}
-	<span class="bg:icon-[hugeicons--poop] bg:size-15 bg:bg-affair-800 bg:dark:bg-bravegrumpy-logoGreen"></span>
+	<span
+		class="bg:icon-[hugeicons--poop] bg:size-15 bg:bg-affair-800 bg:dark:bg-bravegrumpy-logoGreen"
+	></span>
 {/snippet}
 
-<Story 
-	name="Component Logo" 
-	args={{ art: { component: inputLogo } }}
+<Story name="Component Logo" args={{ art: { component: inputLogo } }} />
 
-/>
-
-<Story 
+<Story
 	name="Image Props Logo"
 	args={{
 		art: {
 			img: {
-				src: "https://cdn.bravegrumpy.com/AO3Styles/images/favicon.png"
+				src: 'https://cdn.bravegrumpy.com/AO3Styles/images/favicon.png'
 			}
 		}
 	}}
