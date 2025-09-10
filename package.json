@@ -1,6 +1,6 @@
 {
 	"name": "bravegrumpy-svelte-component-library",
-	"version": "0.0.10-8",
+	"version": "0.0.10-10",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "npm run build:css && vite build && npm run prepack",
@@ -46,9 +46,12 @@
 		"@chromatic-com/storybook": "^4.1.1",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@iconify-json/hugeicons": "^1.2.14",
 		"@iconify/svelte": "^5.0.0",
+		"@iconify/tailwind4": "^1.0.6",
 		"@storybook/addon-docs": "^9.1.5",
 		"@storybook/addon-svelte-csf": "^5.0.8",
+		"@storybook/addon-themes": "^9.1.5",
 		"@storybook/addon-vitest": "9.1.5",
 		"@storybook/sveltekit": "^9.1.5",
 		"@sveltejs/adapter-netlify": "^5.0.0",

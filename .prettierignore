@@ -4,3 +4,9 @@ pnpm-lock.yaml
 yarn.lock
 bun.lock
 bun.lockb
+
+## Markdown files
+README.md
+
+## tailwindcss output
+src/lib/styless.css

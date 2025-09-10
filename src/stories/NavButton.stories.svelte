@@ -19,14 +19,14 @@
 		parameters: {
 			layout: 'centered',
 			backgrounds: {
-				values: [
-					{ name: 'light', value: '#270d3e' },
-					{ name: 'dark', value: '#d1dcff' },
-					{ name: 'reversed-light', value: '#d2c8ff' },
-					{ name: 'reversed-dark', value: '#270d3e' }
-				]
-			}
-		}
+				options: {
+					light: { name: 'light', value: '#270d3e' },
+					dark: { name: 'dark', value: '#d1dcff' },
+					reversedLight: { name: 'reversedLight', value: '#d2c8ff' },
+					reversedDark: { name: 'reversedDark', value: '#270d3e' }
+				},
+			},
+		},
 	});
 </script>
 
@@ -38,29 +38,29 @@
 		slug: '/other',
 		reversed: false
 	}}
-	parameters={{
-		backgrounds: { default: 'light' }
+	globals={{
+		backgrounds: { value: 'light' }
 	}}
 />
 <Story
 	name="DefaultDark"
 	args={{ text: 'Dark', href: '/', slug: '/other', reversed: false, class: 'dark' }}
-	parameters={{ backrounds: { default: 'dark' } }}
+	globals={{ backgrounds: { value: 'dark' } }}
 />
 <Story
 	name="ActiveDefaultLight"
 	args={{ text: 'Active Light', href: '/', slug: '/', reversed: false }}
-	parameters={{ backrounds: { default: 'light' } }}
+	globals={{ backgrounds: { value: 'light' } }}
 />
 <Story
 	name="ActiveDefaultDark"
 	args={{ text: 'Active Dark', href: '/', slug: '/', reversed: false, class: 'dark' }}
-	parameters={{ backrounds: { default: 'dark' } }}
+	globals={{ backgrounds: { value: 'dark' } }}
 />
 <Story
 	name="ReversedDefaultLight"
 	args={{ text: 'Reversed Default Light', href: '/', slug: '/other', reversed: true }}
-	parameters={{ backrounds: { default: 'reversed-light' } }}
+	globals={{ backgrounds: { value: 'reversedLight' } }}
 />
 <Story
 	name="ReversedDefaultDark"
@@ -71,15 +71,15 @@
 		reversed: true,
 		class: 'dark'
 	}}
-	parameters={{ backrounds: { default: 'reversed-dark' } }}
+	globals={{ backgrounds: { value: 'reversedDark' } }}
 />
 <Story
 	name="ReversedActiveLight"
 	args={{ text: 'Reversed Active Light', href: '/', slug: '/', reversed: true }}
-	parameters={{ backrounds: { default: 'reversed-light' } }}
+	globals={{ backgrounds: { value: 'reversedLight' } }}
 />
 <Story
 	name="ReversedActiveDark"
 	args={{ text: 'Reversed Active Dark', href: '/', slug: '/', reversed: true, class: 'dark' }}
-	parameters={{ backrounds: { default: 'reversed-dark' } }}
+	globals={{ backgrounds: { value: 'reversedDark' } }}
 />

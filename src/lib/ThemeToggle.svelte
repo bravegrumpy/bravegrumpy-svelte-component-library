@@ -10,11 +10,7 @@
 	interface Props extends HTMLButtonAttributes {
 		iconSize?: number | string;
 	}
-	const {
-		class: className = '',
-		iconSize = 50,
-		...props
-	}:Props = $props();
+	const { class: className = '', iconSize = 50, ...props }: Props = $props();
 </script>
 
 <!-- <button onclick={toggleDarkMode}>

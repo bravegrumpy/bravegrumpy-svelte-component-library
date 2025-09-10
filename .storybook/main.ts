@@ -7,7 +7,8 @@ const config: StorybookConfig = {
 		'@storybook/addon-svelte-csf',
 		'@chromatic-com/storybook',
 		'@storybook/addon-vitest',
-		'@storybook/addon-docs'
+		'@storybook/addon-docs',
+		'@storybook/addon-themes'
 	],
 
 	framework: {
@@ -19,8 +20,8 @@ const config: StorybookConfig = {
 		disableTelemetry: true,
 		enableCrashReports: false
 	},
-  docs: {
-    defaultName: "Documentation"
-  }
+	docs: {
+		defaultName: 'Documentation'
+	}
 };
 export default config;
