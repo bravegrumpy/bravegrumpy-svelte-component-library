@@ -32,7 +32,10 @@
 		{#if inputLogo}
 			{@render inputLogo()}
 		{:else if art.img}
-			<img {...imgAttrs} class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6" />
+			<img
+				{...imgAttrs}
+				class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6"
+			/>
 		{/if}
 	{:else}
 		<img

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from "@iconify/svelte"
+	import Icon from '@iconify/svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
 	import Logo from '$lib/Logo.svelte';
 </script>
@@ -14,6 +14,8 @@
 	</div>
 {/snippet}
 
-<div class="bg:mx-auto bg:w-fit bg:bg-bravegrumpy-accent2a bg:dark:bg-bravegrumpy-black bg:p-5 bg:rounded-lg bg:border-2 bg:border-solid bg:border-bravegrumpy-black bg:dark:border-bravegrumpy-accent2a">
-	<Logo art={{ component: inputLogo}} />
+<div
+	class="bg:mx-auto bg:w-fit bg:bg-bravegrumpy-accent2a bg:dark:bg-bravegrumpy-black bg:p-5 bg:rounded-lg bg:border-2 bg:border-solid bg:border-bravegrumpy-black bg:dark:border-bravegrumpy-accent2a"
+>
+	<Logo art={{ component: inputLogo }} />
 </div>
