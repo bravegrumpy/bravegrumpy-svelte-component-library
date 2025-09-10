@@ -15,9 +15,11 @@
 		tags: ['autodocs'],
 		argTypes: {
 			icon: { control: 'text' },
+			onclick: { control: 'text'}
 		},
 		args: {
 			icon: 'hugeicons:circle',
+			onclick: fn()
 		}
 	});
 </script>
