@@ -9,6 +9,7 @@ node_modules
 /build
 /dist
 storybook-static
+src/lib/styles.css
 
 # OS
 .DS_Store
