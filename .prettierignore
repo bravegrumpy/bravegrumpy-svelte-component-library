@@ -7,3 +7,6 @@ bun.lockb
 
 ## Markdown files
 README.md
+
+## tailwindcss output
+src/lib/styless.css
