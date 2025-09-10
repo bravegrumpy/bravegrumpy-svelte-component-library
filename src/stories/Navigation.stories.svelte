@@ -1,6 +1,5 @@
 <script module>
 	import '../app.css';
-	import '$lib/styles.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Navigation from '$lib/Navigation.svelte';
 	import { fn } from 'storybook/test';
