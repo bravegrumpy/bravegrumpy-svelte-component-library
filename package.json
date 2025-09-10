@@ -1,6 +1,6 @@
 {
 	"name": "bravegrumpy-svelte-component-library",
-	"version": "0.0.10-4",
+	"version": "0.0.10-12",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "npm run build:css && vite build && npm run prepack",

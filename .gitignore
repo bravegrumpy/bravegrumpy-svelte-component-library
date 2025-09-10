@@ -9,6 +9,10 @@ node_modules
 /build
 /dist
 storybook-static
+src/lib/styles.css
+
+# utility
+netlify.toml
 
 # OS
 .DS_Store
