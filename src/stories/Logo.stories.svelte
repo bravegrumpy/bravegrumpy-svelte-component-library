@@ -51,7 +51,7 @@
 
 {#snippet inputLogo()}
 	<span
-		class="bg:icon-[hugeicons--poop] bg:size-15 bg:bg-affair-800 bg:dark:bg-bravegrumpy-logoGreen"
+		class="bg:icon-[hugeicons--test-tube-03] bg:size-15 bg:bg-affair-800 bg:dark:bg-bravegrumpy-logoGreen bg:rotate-45"
 	></span>
 {/snippet}
 

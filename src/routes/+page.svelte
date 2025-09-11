@@ -1,20 +1,26 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import Icon from '@iconify/svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import NavButton from '$lib/NavButton.svelte';
 	import Navigation from '$lib/Navigation.svelte';
 
-	let i = $state<number[]>([0, 1, 2, 3]);
+	let i = $state<number>(3);
+	let r = $state<boolean>(false);
+
+	let rev = $derived((n: number) => (r ? n % 2 === 0 : n % 2 === 1));
+
+	let currPage = $derived(page.url.pathname);
 </script>
 
 <p>This is the home page</p>
 
 <PageTitle />
-<Icon icon="hugeicons:poop" width={48} height={48} class="bg:text-primary" />
+<Icon icon="hugeicons:test-tube-03" width={48} height={48} class="bg:text-primary" />
 {#snippet inputLogo()}
 	<div class="bg:bg-yellow bg:rounded-4xl bg:mask-intersect">
-		<span class="bg:icon-[hugeicons--poop] bg:size-15"></span>
+		<span class="bg:icon-[hugeicons--test-tube-03] bg:size-15 bg:rotate-45"></span>
 	</div>
 {/snippet}
 
@@ -28,10 +34,27 @@
 	<p class="bg:font-bodyText">Four Score and seven years ago</p>
 </div>
 
-<div class="bg:w-fit bg:mx-auto">
-	<NavButton class="bg:w-full" text="hello" slug="/" reversed />
+<div class="bg:w-fit bg:mx-auto bg:my-10">
+	<NavButton text="test"/>
 </div>
 
-<Navigation navId="navigation-def" />
-<div></div>
-<Navigation navId="navigation-rev" reversed />
+<div
+	class="bg:flex bg:flex-row bg:flex-wrap bg:gap-5 bg:border-solid bg:w-fit bg:mx-auto bg:my-5 bg:*:border-2 bg:*:border-solid bg:*:rounded-md"
+>
+	<div>
+		<p class="bg:inline">Number of Navigation Bars:</p>
+		<input type="number" bind:value={i} class="bg:inline bg:w-15" />
+	</div>
+	<div>
+		<p class="bg:inline">Reversed?</p>
+		<input type="checkbox" class="bg:inline" bind:checked={r} />
+	</div>
+</div>
+
+<div class="bg:flex bg:flex-row bg:flex-wrap bg:w-fit bg:gap-5 bg:bg-yellow bg:mx-auto">
+	<NavButton href="/abcdef" slug={page.url.pathname} text="button" />
+	{#each { length: i }, j}
+		<Navigation navId="navigation-{j}" reversed={rev(j)} class="bg:bg-royal-purple-400" />
+		<p>&nbsp;</p>
+	{/each}
+</div>

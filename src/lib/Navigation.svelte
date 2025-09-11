@@ -32,6 +32,7 @@
 		reversed?: boolean;
 		theme?: 'dark' | '' | null | undefined;
 		navId?: string;
+		className?: string;
 	}
 
 	const {
@@ -39,8 +40,9 @@
 		links = exLinks,
 		reversed = false,
 		theme = '',
-		class: className = '',
-		navId = 'navigation'
+		class: containerClass = '',
+		navId = 'navigation',
+		className = ''
 	}: Props = $props();
 
 	// function toggleNav() {
@@ -62,7 +64,7 @@
 	);
 </script>
 
-<div class="bg:xs:w-11/12">
+<div class="bg:xs:w-11/12 bg:md:w-fit {containerClass}">
 	<Button
 		icon="hugeicons:menu-01"
 		onclick={() => {
