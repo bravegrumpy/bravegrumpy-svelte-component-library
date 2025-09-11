@@ -1,11 +1,38 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import NavButton from '$lib/NavButton.svelte';
 	import Navigation from '$lib/Navigation.svelte';
 
-	let i = $state<number[]>([0, 1, 2, 3]);
+	let c = $state<number>(4);
+
+	let makeI = $derived((v: number) => {
+		const arr = new Array<number>(v);
+		let j = 0;
+		while (j < v) {
+			arr[j] = j;
+		}
+		return arr;
+	});
+
+	let i = $derived<number[]>(makeI(c));
+
+	let checked = $state<boolean>(false);
+
+	let rev = $derived(() => {
+		let arr = new Array<boolean>();
+		for (let j = 0; j < i.length; j++) {
+			arr.push(j % 0 === 0);
+		}
+		return arr;
+	});
+
+	let revved = $derived(rev());
+	let reversed = $derived((c: boolean, idx: number) => {
+		return c ? revved[idx] : !revved[idx];
+	});
 </script>
 
 <p>This is the home page</p>
@@ -32,6 +59,15 @@
 	<NavButton class="bg:w-full" text="hello" slug="/" reversed />
 </div>
 
-<Navigation navId="navigation-def" />
-<div></div>
-<Navigation navId="navigation-rev" reversed />
+<div>
+	<p class="bg:inline">How many navs?</p>
+	<input bind:value={c} class="bg:inline bg:w-15" type="number" />
+	<p></p>
+	<p class="bg:inline">Reversed?</p>
+	<input bind:checked class="bg:inline" type="checkbox" />
+</div>
+
+{#each i as j}
+	<Navigation navId="navigation-{j}" reversed={reversed(checked, j)} />
+	<p>Hello {typeof j}</p>
+{/each}
