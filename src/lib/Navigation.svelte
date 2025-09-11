@@ -30,19 +30,19 @@
 		slug?: string;
 		links?: ref[];
 		reversed?: boolean;
-		theme?: 'dark' | '' | null | undefined;
 		navId?: string;
 		className?: string;
+		navButtonClass?: string;
 	}
 
 	const {
 		slug,
 		links = exLinks,
 		reversed = false,
-		theme = '',
 		class: containerClass = '',
 		navId = 'navigation',
-		className = ''
+		className = '',
+		navButtonClass = ''
 	}: Props = $props();
 
 	// function toggleNav() {
@@ -60,7 +60,7 @@
 	}
 
 	const scratch = $state(
-		'bg:invisible bg:sm:visible bg:sm:flex bg:sm:w-100 bg:w-fit bg:flex-col bg:gap-2 bg:lg:flex-row '
+		'bg:invisible bg:sm:visible bg:sm:flex bg:sm:w-100 bg:w-fit bg:flex-col bg:gap-2 bg:lg:flex-row'
 	);
 </script>
 
@@ -77,7 +77,7 @@
 
 	<nav
 		id={navId}
-		class={`bg:hidden bg:md:flex bg:md:flex-col bg:lg:flex-row bg:md:flex-wrap bg:flex-col bg:gap-2 ${className} ${theme}`}
+		class={`bg:hidden bg:md:flex bg:md:flex-col bg:lg:flex-row bg:md:flex-wrap bg:flex-col bg:gap-2 ${className}`}
 	>
 		{#each links as link (link.id)}
 			<NavButton
@@ -85,7 +85,7 @@
 				href={link.href}
 				text={link.text}
 				{reversed}
-				class="bg:h-fit bg:md:w-1/3 bg:lg:w-fit"
+				class="bg:h-fit bg:md:w-fit bg:md:max-w-25 bg:md:overflow-clip bg:lg:w-fit bg:lg:max-w-full {navButtonClass}"
 			/>
 		{/each}
 		<ThemeToggle

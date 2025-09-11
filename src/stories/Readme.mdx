@@ -1,0 +1,22 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+import '$lib/styles.css';
+
+import Readme from '../../README.md?raw';
+
+<Meta title="Introduction" />
+
+# README
+
+<div className="bg:bg-bravegrumpy-accent2a bg:rounded bg:px-10 bg:py-2 bg:text-bravegrumpy-black bg:border-2 bg:border-solid bg:dark:bg-bravegrumpy-black">
+
+## Notes
+
+This Storybook site has access to the Tailwindcss global CDN.
+This means that within the context of these docs, you can add any tailwind classes to any prop related to styling.
+
+</div>
+
+<br />
+
+<Markdown>{Readme}</Markdown>
