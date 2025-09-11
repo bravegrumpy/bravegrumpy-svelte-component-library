@@ -11,6 +11,9 @@ node_modules
 storybook-static
 src/lib/styles.css
 
+#utility
+netlify.toml
+
 # OS
 .DS_Store
 Thumbs.db
