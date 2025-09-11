@@ -1,10 +1,13 @@
 <script lang="ts">
+	import type { LayoutProps } from './$types.js';
+	let { data, children }: LayoutProps = $props();
 	import '../app.css';
 	import { onMount } from 'svelte';
 
 	import Logo from '$lib/Logo.svelte';
 	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
+	import PageTitle from '$lib/PageTitle.svelte';
 
 	let bodyClass = $state(
 		'bg:bg-solarized-base-2 bg:dark:bg-solarized-base-02 bg:text-bravegrumpy-black bg:dark:text-bravegrumpy-accent2a'
@@ -18,9 +21,9 @@
 		addBodyClass();
 	});
 
-	const currSlug = $derived(page.url.pathname);
+	const links = $derived(data.routes);
 
-	let { children } = $props();
+	const currSlug = $derived(page.url.pathname);
 </script>
 
 <svelte:head>
@@ -33,5 +36,6 @@
 </svelte:head>
 
 <Logo />
-<Navigation slug={currSlug} />
+<Navigation slug={currSlug} {links} />
+<PageTitle pageTitle="Page Title" pageSubtitle="Page SubTitle" />
 {@render children?.()}
