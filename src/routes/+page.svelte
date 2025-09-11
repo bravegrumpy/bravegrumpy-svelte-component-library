@@ -16,7 +16,11 @@
 
 <p>This is the home page</p>
 
-<PageTitle />
+<div class="bg:relative bg:top-0">
+<PageTitle pageTitle="Page Title" pageSubtitle="page subtitle" />
+</div>
+
+
 <Icon icon="hugeicons:test-tube-03" width={48} height={48} class="bg:text-primary" />
 {#snippet inputLogo()}
 	<div class="bg:bg-yellow bg:rounded-4xl bg:mask-intersect">
@@ -35,7 +39,7 @@
 </div>
 
 <div class="bg:w-fit bg:mx-auto bg:my-10">
-	<NavButton text="test"/>
+	<NavButton text="test" />
 </div>
 
 <div
