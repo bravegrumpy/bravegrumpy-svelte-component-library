@@ -19,7 +19,7 @@
 		args: {
 			pageTitle: 'Hello World',
 			pageSubtitle: 'Subtitle'
-		},
+		}
 	});
 </script>
 

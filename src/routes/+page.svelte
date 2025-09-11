@@ -17,9 +17,8 @@
 <p>This is the home page</p>
 
 <div class="bg:relative bg:top-0">
-<PageTitle pageTitle="Page Title" pageSubtitle="page subtitle" />
+	<PageTitle pageTitle="Page Title" pageSubtitle="page subtitle" />
 </div>
-
 
 <Icon icon="hugeicons:test-tube-03" width={48} height={48} class="bg:text-primary" />
 {#snippet inputLogo()}

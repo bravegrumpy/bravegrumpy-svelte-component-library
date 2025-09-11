@@ -3,10 +3,11 @@
 		pageTitle: string;
 		pageSubtitle: string;
 	}
-	let { pageTitle, pageSubtitle }:Props = $props();
+	let { pageTitle, pageSubtitle }: Props = $props();
 </script>
+
 <div
-	class="bg:bg-bravegrumpy-accent2a bg:text-bravegrumpy-logoPurple bg:dark:bg-affair bg:dark:text-bravegrumpy-accent1a bg:w-fit bg:px-20 bg:py-5 bg:border-2 bg:border-solid  bg:rounded-md bg:flex bg:flex-col bg:gap-5 bg:content-center"
+	class="bg:bg-bravegrumpy-accent2a bg:text-bravegrumpy-logoPurple bg:dark:bg-affair bg:dark:text-bravegrumpy-accent1a bg:w-fit bg:px-20 bg:py-5 bg:border-2 bg:border-solid bg:rounded-md bg:flex bg:flex-col bg:gap-5 bg:content-center"
 >
 	<h2 class="bg:font-pageTitle bg:text-5xl">{pageTitle}</h2>
 	<p class="bg:font-pageSubtitle bg:self-center bg:text-2xl">{pageSubtitle}</p>
