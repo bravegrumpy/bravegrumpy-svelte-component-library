@@ -8,7 +8,18 @@ This component library translates the svelte components used in [my personal web
 
 - [ ] Have a typesafe component libray in svelte
 - [ ] migrate my main webstie to this component library.
-- [ ] include responsive web design.
+- [x] include responsive web design.
+
+## Installation
+
+### Prerequisites
+
+This is a `svelte` component library. The components are svelte components. 
+
+This library uses tailwind, with a namespace. Therefore, it should not interfere with your tailwind config and classes in the rest of your project.
+
+**Install**: `npm install bravegrumpy-svelte-component-library@latest`
+
 
 ## Notes 
 
