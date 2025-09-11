@@ -5,7 +5,21 @@
 	const { Story } = defineMeta({
 		title: 'Bravegrumpy/PageTitle',
 		component: PageTitle,
-		tags: ['autodocs']
+		tags: ['autodocs'],
+		argTypes: {
+			pageTitle: {
+				control: 'text',
+				description: 'Page Title'
+			},
+			pageSubtitle: {
+				control: 'text',
+				description: 'Smaller text below the title'
+			}
+		},
+		args: {
+			pageTitle: 'Hello World',
+			pageSubtitle: 'Subtitle'
+		}
 	});
 </script>
 

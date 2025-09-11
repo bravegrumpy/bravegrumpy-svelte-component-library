@@ -55,7 +55,7 @@
 				{logo}
 			{/if}
 		</h1>
-		<h2
+		<p
 			class="bg:font-logoSubtitle bg:text-md bg:hidden bg:text-center bg:xs:block bg:xs:text-xs bg:xs:text-center bg:xs:shrink-2 bg:xs:w-40 bg:sm:text-xs bg:sm:w-49 bg:md:text-base bg:md:w-75 bg:lg:w-60 bg:xl:w-82 bg:xl:self-center bg:xl:-ml-4 bg:xl:text-center"
 		>
 			{#if typeof subtitle !== 'string'}
@@ -63,6 +63,6 @@
 			{:else}
 				{subtitle}
 			{/if}
-		</h2>
+		</p>
 	</div>
 </div>
