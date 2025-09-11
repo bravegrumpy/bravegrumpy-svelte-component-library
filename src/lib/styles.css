@@ -42,6 +42,7 @@
     --bg-font-navMenuActive: 'Recursive', serif;
     --bg-font-navMenuActive--font-variation-settings: 'MONO' 0.5, 'CASL' 1, 'wght' 900, 'slnt' 0, 'CRSV' 0.5;
     --bg-font-bodyText: 'Recursive', sans-serif;
+    --bg-font-bodyText--font-variation-settings: 'MONO' 0, 'CASL' 0, 'wght' 400, 'slnt' 0, 'CRSV' 0;
     --bg-font-sans--font-variation-settings: 'MONO' 1, 'CASL' 0, 'wght' 400, 'slnt' 0, 'CRSV' 0;
     --bg-color-royal-purple-400: oklch(0.74 0.1366 305.29);
     --bg-color-cerulean-blue-800: #2848a5;
@@ -389,9 +390,6 @@
   .bg\:bg-bravegrumpy-brand1 {
     background-color: var(--bg-color-bravegrumpy-brand1);
   }
-  .bg\:bg-green {
-    background-color: var(--bg-color-green);
-  }
   .bg\:bg-royal-purple-400 {
     background-color: var(--bg-color-royal-purple-400);
   }
@@ -431,6 +429,10 @@
   .bg\:text-center {
     text-align: center;
   }
+  .bg\:font-bodyText {
+    font-family: var(--bg-font-bodyText);
+    font-variation-settings: var(--bg-font-bodyText--font-variation-settings);
+  }
   .bg\:font-navMenuDefault {
     font-family: var(--bg-font-navMenuDefault);
     font-variation-settings: var(--bg-font-navMenuDefault--font-variation-settings);
@@ -442,9 +444,6 @@
   .bg\:font-pageTitle {
     font-family: var(--bg-font-pageTitle);
     font-variation-settings: var(--bg-font-pageTitle--font-variation-settings);
-  }
-  .bg\:font-bodyText {
-    font-family: var(--bg-font-bodyText);
   }
   .bg\:font-logo {
     font-family: var(--bg-font-logo);
