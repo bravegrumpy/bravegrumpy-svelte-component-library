@@ -13,7 +13,7 @@
 
 	let currPage = $derived(page.url.pathname);
 
-	const links = $derived(page.data.routes)
+	const links = $derived(page.data.routes);
 </script>
 
 <p>This is the home page</p>
@@ -59,12 +59,7 @@
 <div class="bg:flex bg:flex-row bg:flex-wrap bg:w-fit bg:gap-5 bg:bg-yellow bg:mx-auto">
 	<NavButton href="/abcdef" slug={page.url.pathname} text="button" />
 	{#each { length: i }, j}
-		<Navigation 
-			navId="navigation-{j}" 
-			reversed={rev(j)} 
-			class="bg:bg-royal-purple-400"
-			{links}
-		/>
+		<Navigation navId="navigation-{j}" reversed={rev(j)} class="bg:bg-royal-purple-400" {links} />
 		<p>&nbsp;</p>
 	{/each}
 </div>
