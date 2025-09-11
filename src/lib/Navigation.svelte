@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './styles.css';
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import NavButton from './NavButton.svelte';
 	import Button from './Button.svelte';

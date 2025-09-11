@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { type HTMLButtonAttributes } from 'svelte/elements';
-	import './styles.css';
 	import Icon from '@iconify/svelte';
 	import Button from '$lib/Button.svelte';
 	function toggleDarkMode() {

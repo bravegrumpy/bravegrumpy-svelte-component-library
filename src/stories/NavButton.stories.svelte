@@ -1,5 +1,4 @@
 <script module>
-	import '../app.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import NavButton from '$lib/NavButton.svelte';
 	import { fn } from 'storybook/test';

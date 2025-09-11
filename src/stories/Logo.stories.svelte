@@ -1,5 +1,5 @@
 <script module>
-	import '../app.css';
+	// import '../app.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Logo from '$lib/Logo.svelte';
 	import { fn } from 'storybook/test';
