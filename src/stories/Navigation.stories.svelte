@@ -1,5 +1,6 @@
 <script module>
-	// import '../app.css';
+	import '../app.css';
+	import '$lib/styles.css';
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Navigation from '$lib/Navigation.svelte';
 	import { fn } from 'storybook/test';
@@ -12,10 +13,23 @@
 		},
 		tags: ['autodocs'],
 		argTypes: {
-			slug: { control: 'text' },
-			reversed: { control: 'boolean' },
+			slug: {
+				control: 'text',
+				description:
+					"Input slug of 'current' page. Include leading slash. For each link, it is compared to the href value passed to the underlying `NavButton` component. It will show as 'active'."
+			},
+			reversed: {
+				control: 'boolean',
+
+				description: 'Controls which of two color schemes are used for the navigation bar'
+			},
 			class: { control: 'text' },
-			theme: { control: 'text' }
+			className: { control: 'text' },
+			navButtonClass: {
+				control: 'text',
+				description:
+					'accepts styling classes to append to the end of the tailwindclasses for the underlying `NavButton` componenet. Does not override the styling of the underlying anchor component. It flows into the class property within `NavButton`, which adds to the pre-set styling'
+			}
 		},
 		args: {
 			links: [
@@ -34,7 +48,9 @@
 					href: '/contact',
 					text: 'Contact'
 				}
-			]
+			],
+			className: '',
+			defaultLight: ''
 		},
 		parameters: {
 			layout: 'right',
@@ -62,7 +78,7 @@
 	args={{
 		slug: '/about',
 		reversed: false,
-		theme: 'dark'
+		class: 'dark'
 	}}
 	globals={{
 		backgrounds: {
@@ -85,7 +101,7 @@
 	args={{
 		slug: '/about',
 		reversed: true,
-		theme: 'dark'
+		class: 'dark'
 	}}
 	globals={{
 		backgrounds: { value: 'reversedDark' }
