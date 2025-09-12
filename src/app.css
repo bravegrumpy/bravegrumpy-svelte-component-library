@@ -680,8 +680,15 @@
 
 	--color-backgroundImage-map: url('https://cdn.bravegrumpy.com/static/assets/images/map01_001_d.png');
 
-	--breakpoint-2xs: 360px;
-	--breakpoint-xs: 420px;
+	--text-4-5xl: 2.5rem;
+	--text-4-5xl--line-height: 1;
+
+	--breakpoint-6xs: 240px;
+	--breakpoint-5xs: 300px;
+	--breakpoint-4xs: 360px;
+	--breakpoint-3xs: 420px;
+	--breakpoint-2xs: 480px;
+	--breakpoint-xs:  540px;
 }
 
 /* 
