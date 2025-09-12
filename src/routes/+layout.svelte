@@ -36,6 +36,6 @@
 </svelte:head>
 
 <Logo />
-<Navigation slug={currSlug} {links} />
-<PageTitle pageTitle="Page Title" pageSubtitle="Page SubTitle" />
+<Navigation  {links}/>
+
 {@render children?.()}
