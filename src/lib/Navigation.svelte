@@ -64,13 +64,13 @@
 	);
 </script>
 
-<div class="bg:xs:w-11/12 bg:md:w-fit {containerClass}">
+<div class="{containerClass}">
 	<Button
 		icon="hugeicons:menu-01"
 		onclick={() => {
 			toggleNav();
 		}}
-		class="bg:w-full bg:my-3 bg:sm:w-fit bg:md:hidden"
+		class="bg:w-full bg:my-3 bg:sm:w-fit bg:md:hidden bg:xs:max-w-9/12 bg:xs:w-full bg:xs:mx-auto"
 		iconStyles="bg:mx-auto"
 		iconSize="bg:size-8 bg:sm:size-10"
 	/>

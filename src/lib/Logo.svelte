@@ -21,10 +21,18 @@
 
 	let inputLogo = $derived(art?.component);
 	let imgAttrs = $derived({ ...art?.img });
+
+	let textColor = $state("bg:text-bravegrumpy-black bg:dark:text-bravegrumpy-accent1a")
+
+	let imgClasses = $state("bg:size-8 bg:rounded-sm bg:6xs:size-10 bg:5xs:size-13 bg:4xs:size-15 bg:3xs:size-13 bg:xs:size-18 bg:sm:size-20");
+	let logoClasses = $state("bg:font-logo bg:text-2xl bg:scale-105 bg:6xs:scale-100 bg:6xs:text-4xl bg:5xs:text-5xl bg:4xs:text-6xl bg:2xs:text-5xl bg:xs:text-7xl bg:xs:-mt-2 bg:sm:mt-4 bg:sm:text-7xl bg:md:-mt-2 bg:lg:text-8xl bg:lg:mt-0");
+	let logoSubtitleClasses = $state("bg:font-logoSubtitle bg:hidden bg:2xs:block bg:2xs:text-xs bg:2xs:text-center bg:2xs:self-center bg:xs:w-5/8 bg:xs:text-left bg:xs:-mt-2 bg:xs:-ml-15 bg:xs:text-sm bg:sm:text-md bg:sm:w-6/8 bg:lg:text-lg bg:lg:-ml-15 bg:lg:w-5/8");
+	let divClasses = $state("bg:flex bg:flex-row bg:max-w-full bg:w-full bg:mx-auto bg:justify-start bg:gap-2 bg:4xs:w-fit bg:2xs:mx-0 bg:2xs:w-full bg:2xs:justify-around bg:xs:w-fit");
+	let textDivClasses = $state("bg:w-fit bg:h-fit bg:self-center bg:2xs:flex bg:2xs:flex-row bg:2xs:gap-2 bg:xs:flex-col")
 </script>
 
 <div
-	class={`bg:flex bg:flex-row bg:justify-start bg:gap-2 bg:w-full bg:text-bravegrumpy-logoPurple bg:dark:text-bravegrumpy-accent1a bg:sm:items-start bg:items-center ${className}`}
+	class={` ${divClasses} ${className}`}
 	{...props}
 >
 	{#if art !== null}
@@ -33,21 +41,21 @@
 		{:else if art.img}
 			<img
 				{...imgAttrs}
-				class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6"
+				class={imgClasses}
 			/>
 		{/if}
 	{:else}
 		<img
 			src="https://cdn.bravegrumpy.com/static/assets/images/BG_logo.png"
 			alt=""
-			class="bg:size-10 bg:rounded-md bg:2xs:size-15 bg:sm:mt-2 bg:xs:self-center bg:sm:size-16 bg:sm:self-start bg:md:size-20 bg:md:mt-3 bg:lg:mt-4 bg:xl:mt-6"
+			class={imgClasses}
 		/>
 	{/if}
 	<div
-		class="bg:flex bg:flex-col bg:justify-center bg:items-center bg:gap-1 bg:xs:flex-row bg:sm:flex-col bg:sm:w-fit bg:xs:gap-4 bg:xs:items:center bg:sm:gap-0"
+		class={textDivClasses}
 	>
 		<h1
-			class="bg:font-logo bg:text-4xl bg:2xs:text-5xl bg:md:text-6xl bg:lg:text-7xl bg:xl:text-8xl"
+			class='{logoClasses} {textColor}'
 		>
 			{#if typeof logo !== 'string'}
 				{@render logo()}
@@ -56,7 +64,7 @@
 			{/if}
 		</h1>
 		<p
-			class="bg:font-logoSubtitle bg:text-md bg:hidden bg:text-center bg:xs:block bg:xs:text-xs bg:xs:text-center bg:xs:shrink-2 bg:xs:w-40 bg:sm:text-xs bg:sm:w-49 bg:md:text-base bg:md:w-75 bg:lg:w-60 bg:xl:w-82 bg:xl:self-center bg:xl:-ml-4 bg:xl:text-center"
+			class='{logoSubtitleClasses} {textColor}'
 		>
 			{#if typeof subtitle !== 'string'}
 				{@render subtitle()}

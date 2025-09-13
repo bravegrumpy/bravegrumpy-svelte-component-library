@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Navigation from '$lib/Navigation.svelte';
-
-	import { page } from '$app/state';
+	import Section from "$lib/Section.svelte";
 </script>
 
-<div class="bg:w-fit bg:mx-auto bg:my-10">
-	<Navigation navId="homepage" links={page.data.routes} />
-</div>
+<Section>
+	<p>This is the home page</p>
+</Section>
