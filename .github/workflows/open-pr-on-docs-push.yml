@@ -6,82 +6,32 @@ on:
       - docs
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
-
-env:
-  BASE_BRANCH: main
 
 jobs:
   open-pr:
     runs-on: ubuntu-latest
+    # avoid loops when the action itself pushes (actor becomes github-actions[bot])
+    if: ${{ github.actor != 'github-actions[bot]' }}
     steps:
-      - name: Create PR (if none exists)
-        uses: actions/github-script@v7
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            // target base branch: env override -> repo default -> 'main'
-            const base =
-              process.env.BASE_BRANCH ||
-              (context.payload.repository &&
-                context.payload.repository.default_branch) ||
-              'main';
+          fetch-depth: 0
 
-            const head = context.ref.replace('refs/heads/', '');
-
-            // extra safety: this workflow is already limited to docs,
-            // but double-check
-            if (head !== 'docs') {
-              core.info(`Not a docs push (ref=${context.ref}), exiting.`);
-              return;
-            }
-
-            if (head === base) {
-              core.info(`Head (${head}) is same as base (${base}), nothing to do.`);
-              return;
-            }
-
-            // Avoid loops / bot-triggered runs
-            const actor = context.actor || '';
-            if (actor.endsWith('[bot]') || actor === 'github-actions') {
-              core.info(`Triggered by actor ${actor}, skipping.`);
-              return;
-            }
-
-            core.info(`Checking for open PRs from ${head} → ${base}...`);
-
-            const { data: pulls } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              head: `${context.repo.owner}:${head}`,
-              base,
-              state: 'open',
-              per_page: 100,
-            });
-
-            if (pulls.length > 0) {
-              core.info(`Open PR already exists: ${pulls[0].html_url}`);
-              core.setOutput('pr', pulls[0].html_url);
-              return;
-            }
-
-            core.info('No open PR found — creating one now.');
-
-            const title = `Docs: update from ${head}`;
-            const body =
-              `This PR was opened automatically from branch \`${head}\`.` +
-              `\n\nIf you want to change the base branch, update BASE_BRANCH in the workflow.`;
-
-            const pr = await github.rest.pulls.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title,
-              head,
-              base,
-              body,
-              draft: false,
-            });
-
-            core.info(`Created PR: ${pr.data.html_url}`);
-            core.setOutput('pr', pr.data.html_url);
+      - name: Create pull request (peter-evans)
+        uses: peter-evans/create-pull-request@v7
+        with:
+          # token used to create the PR and push branch refs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # target branch (PR will merge into this)
+          base: main
+          # the PR head branch name to use (you can set a different branch name
+          # if you want the PR to be created from a generated branch)
+          branch: docs
+          title: Automated PR: docs → main
+          body: |
+            This PR was opened automatically from the `docs` branch by GitHub Actions.
+          labels: automated, docs
+          draft: false
