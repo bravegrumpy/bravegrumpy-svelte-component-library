@@ -30,7 +30,7 @@ jobs:
           # the PR head branch name to use (you can set a different branch name
           # if you want the PR to be created from a generated branch)
           branch: docs
-          title: Automated PR: docs → main
+          title: "Automated PR: docs → main"
           body: |
             This PR was opened automatically from the `docs` branch by GitHub Actions.
           labels: automated, docs
