@@ -24,7 +24,7 @@ jobs:
           head: docs       # Source branch (automatically detected)
           title: "[Docs] Automated PR"
           body: "This PR was opened automatically via GitHub Actions."
-          labels: docs, automated, automerge
+          labels: docs, automated
           draft: false     # Set to true for draft PRs
           committer: code@bravegrumpy.com  # Optional: override commit author email
 
