@@ -47,8 +47,8 @@
 		navButtonClass="bg:text-2xl"
 		slug={currSlug}
 	/>
+	<PageTitle pageTitle={page.data.pageTitle} pageSubtitle={page.data.pageSubtitle} />
 </div>
-<PageTitle pageTitle={'page title'} pageSubtitle="Page Subtitle" />
 <div class="bg:bg-solarized-base-3 bg:dark:bg-solarized-base-03 bg:w-8/12 bg:mx-auto">
 	{@render children?.()}
 </div>
