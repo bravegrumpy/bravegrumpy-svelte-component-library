@@ -64,7 +64,7 @@
 	);
 </script>
 
-<div class="{containerClass}">
+<div class={containerClass}>
 	<Button
 		icon="hugeicons:menu-01"
 		onclick={() => {

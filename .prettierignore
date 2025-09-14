@@ -10,3 +10,7 @@ README.md
 
 ## tailwindcss output
 src/lib/styless.css
+
+## JSON files
+package.json
+package-lock.json
