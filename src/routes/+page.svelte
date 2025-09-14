@@ -10,7 +10,4 @@
 	<h5>Hello World</h5>
 	<h6>Hello World</h6>
 	<p>Hello World. This is a something. Something else. yikes this is lol. asdf.</p>
-	<p>Testing change</p>
-	<p>Another test</p>
-	<p>Yet another test</p>
 </Section>
