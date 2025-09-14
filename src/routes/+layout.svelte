@@ -36,13 +36,18 @@
 	/>
 </svelte:head>
 
-<div class="bg:bg-bravegrumpy-accent1a bg:grid bg:grid-cols-2 bg:w-fit bg:mx-auto bg:dark:bg-bravegrumpy-logoPurple bg:p-5">
+<div
+	class="bg:bg-bravegrumpy-accent1a bg:grid bg:grid-cols-2 bg:w-fit bg:mx-auto bg:dark:bg-bravegrumpy-logoPurple bg:p-5"
+>
 	<Logo />
-	<Navigation  {links} reversed class="bg:mx-auto bg:h-fit bg:my-auto"
-	navButtonClass="bg:text-2xl"
-	slug={currSlug}
+	<Navigation
+		{links}
+		reversed
+		class="bg:mx-auto bg:h-fit bg:my-auto"
+		navButtonClass="bg:text-2xl"
+		slug={currSlug}
 	/>
 </div>
 <div class="bg:bg-solarized-base-3 bg:dark:bg-solarized-base-03 bg:w-8/12 bg:mx-auto">
-{@render children?.()}
+	{@render children?.()}
 </div>
