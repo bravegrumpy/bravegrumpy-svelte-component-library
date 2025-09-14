@@ -14,12 +14,8 @@
     --bg-text-sm--line-height: calc(1.25 / 0.875);
     --bg-text-lg: 1.125rem;
     --bg-text-lg--line-height: calc(1.75 / 1.125);
-    --bg-text-xl: 1.25rem;
-    --bg-text-xl--line-height: calc(1.75 / 1.25);
     --bg-text-2xl: 1.5rem;
     --bg-text-2xl--line-height: calc(2 / 1.5);
-    --bg-text-3xl: 1.875rem;
-    --bg-text-3xl--line-height: calc(2.25 / 1.875);
     --bg-text-4xl: 2.25rem;
     --bg-text-4xl--line-height: calc(2.5 / 2.25);
     --bg-text-5xl: 3rem;
@@ -47,6 +43,8 @@
     --bg-font-navMenuDefault--font-variation-settings: 'MONO' 0, 'CASL' 1, 'wght' 600, 'slnt' -8, 'CRSV' 1;
     --bg-font-navMenuActive: 'Recursive', serif;
     --bg-font-navMenuActive--font-variation-settings: 'MONO' 0.5, 'CASL' 1, 'wght' 900, 'slnt' 0, 'CRSV' 0.5;
+    --bg-font-heading: 'Recursive', 'Impact', monospace;
+    --bg-font-heading--font-variation-settings: 'MONO' 0.57, 'CASL' 1, 'wght' 700, 'slnt' 0, 'CRSV' 0.5;
     --bg-font-bodyText: 'Recursive', sans-serif;
     --bg-font-bodyText--font-variation-settings: 'MONO' 0, 'CASL' 0, 'wght' 400, 'slnt' 0, 'CRSV' 0;
     --bg-font-sans--font-variation-settings: 'MONO' 1, 'CASL' 0, 'wght' 400, 'slnt' 0, 'CRSV' 0;
@@ -54,7 +52,6 @@
     --bg-color-cerulean-blue-800: #2848a5;
     --bg-color-affair: #654d86;
     --bg-color-affair-800: #654d86;
-    --bg-color-violet: #270d3e;
     --bg-color-bravegrumpy-black: #080418;
     --bg-color-bravegrumpy-brand1: #6e34a2;
     --bg-color-bravegrumpy-brand6: #654d86;
@@ -67,15 +64,7 @@
     --bg-color-solarized-base-2: #eee8d5;
     --bg-color-solarized-base-02: #073642;
     --bg-color-primary: #6e34a2;
-    --bg-color-blue: #2753c0;
-    --bg-color-green: #499c2f;
-    --bg-color-cyan: #2aa198;
-    --bg-color-cyan-200: #a6e9de;
-    --bg-color-red: #dc322f;
-    --bg-color-orange: #cb4b16;
     --bg-color-yellow: #b58900;
-    --bg-text-4-5xl: 2.5rem;
-    --bg-text-4-5xl--line-height: 1;
   }
 }
 @layer base {
@@ -998,18 +987,6 @@
       line-height: var(--tw-leading, var(--bg-text-4xl--line-height));
     }
   }
-  .bg\:5xs\:size-13 {
-    @media (width >= 300px) {
-      width: calc(var(--bg-spacing) * 13);
-      height: calc(var(--bg-spacing) * 13);
-    }
-  }
-  .bg\:5xs\:text-5xl {
-    @media (width >= 300px) {
-      font-size: var(--bg-text-5xl);
-      line-height: var(--tw-leading, var(--bg-text-5xl--line-height));
-    }
-  }
   .bg\:4xs\:size-15 {
     @media (width >= 360px) {
       width: calc(var(--bg-spacing) * 15);
@@ -1413,6 +1390,12 @@
           color: var(--bg-color-bravegrumpy-highlight1);
         }
       }
+    }
+  }
+  .bg\:prose-headings\:font-heading {
+    & :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+      font-family: var(--bg-font-heading);
+      font-variation-settings: var(--bg-font-heading--font-variation-settings);
     }
   }
 }
