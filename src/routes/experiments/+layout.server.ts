@@ -5,7 +5,8 @@ export const load: LayoutServerLoad = async () => {
 	const subRoutes: ref[] = [
 		{ id: 'exproot', href: '/experiments', text: 'Playground' },
 		{ id: 'one', href: '/experiments/one', text: 'First' },
-		{ id: 'two', href: '/experiments/two', text: 'Second' }
+		{ id: 'two', href: '/experiments/two', text: 'Second' },
+		{ id: 'three', href: '/experiments/three', text: 'Third' }
 	];
 	return {
 		subRoutes
