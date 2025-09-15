@@ -1,13 +1,15 @@
 <script lang="ts">
-	interface Props {
+	import type { SvelteHTMLElements } from 'svelte/elements';
+	type SvelteDivElement = SvelteHTMLElements['div'];
+	interface Props extends SvelteDivElement {
 		pageTitle: string;
 		pageSubtitle: string;
 	}
-	let { pageTitle, pageSubtitle }: Props = $props();
+	let { pageTitle, pageSubtitle, class: titleClasses }: Props = $props();
 </script>
 
 <div
-	class="bg:bg-bravegrumpy-accent2a bg:text-bravegrumpy-logoPurple bg:dark:bg-affair bg:dark:text-bravegrumpy-accent1a bg:w-fit bg:px-20 bg:py-5 bg:border-2 bg:border-solid bg:rounded-md bg:flex bg:flex-col bg:gap-5 bg:content-center bg:shadow-light bg:dark:shadow-dark"
+	class="bg:bg-bravegrumpy-accent2a bg:text-bravegrumpy-logoPurple bg:dark:bg-affair bg:dark:text-bravegrumpy-accent1a bg:w-fit bg:px-20 bg:py-5 bg:border-2 bg:border-solid bg:rounded-md bg:flex bg:flex-col bg:gap-5 bg:content-center bg:shadow-light bg:dark:shadow-dark bg:col-start-2 bg:col-end-4 bg:row-start-2 {titleClasses}"
 >
 	<h2 class="bg:font-pageTitle bg:text-5xl">{pageTitle}</h2>
 	<p class="bg:font-pageSubtitle bg:self-center bg:text-2xl bg:hidden bg:xl:block">

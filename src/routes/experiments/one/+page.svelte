@@ -1,12 +1,10 @@
 <script lang="ts">
-	import type { PageProps } from './$types.js';
 	import { page } from '$app/state';
 	import Icon from '@iconify/svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import NavButton from '$lib/NavButton.svelte';
 	import Navigation from '$lib/Navigation.svelte';
-	import Section from '$lib/Section.svelte';
 
 	let i = $state<number>(3);
 	let r = $state<boolean>(false);
@@ -16,8 +14,6 @@
 	let currPage = $derived(page.url.pathname);
 
 	const links = $derived(page.data.routes);
-
-	let { data }: PageProps = $props();
 </script>
 
 <p>This is the home page</p>
@@ -67,7 +63,3 @@
 		<p>&nbsp;</p>
 	{/each}
 </div>
-
-<Section class="bg:col-span-3">
-	<p>{JSON.stringify(page.data)}</p>
-</Section>

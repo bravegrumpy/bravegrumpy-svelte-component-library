@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Section from '$lib/Section.svelte';
+	import Main from '$lib/Main.svelte';
 </script>
 
-<Section>
+<Section class="bg:col-start-2">
 	<p>This is the home page</p>
 	<h2>Hello World</h2>
 	<h3>Hello World</h3>

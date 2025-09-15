@@ -8,7 +8,8 @@
 	import { page } from '$app/state';
 	import Navigation from '$lib/Navigation.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
-	import Page from './experiments/+page.svelte';
+	import Main from '$lib/Main.svelte';
+	import Header from '$lib/Header.svelte';
 
 	let bodyClass = $state(
 		'bg:bg-solarized-base-2 bg:dark:bg-solarized-base-02 bg:text-bravegrumpy-black bg:dark:text-bravegrumpy-accent2a'
@@ -25,6 +26,8 @@
 	const links = $derived(data.routes);
 
 	const currSlug = $derived(page.url.pathname);
+	const subLinks = $derived(page.data.subRoutes);
+	const subSlug = $derived(page.url.pathname);
 </script>
 
 <svelte:head>
@@ -36,19 +39,7 @@
 	/>
 </svelte:head>
 
-<div
-	class="bg:bg-bravegrumpy-accent1a bg:grid bg:grid-cols-2 bg:w-fit bg:mx-auto bg:dark:bg-bravegrumpy-logoPurple bg:p-5"
->
-	<Logo />
-	<Navigation
-		{links}
-		reversed
-		class="bg:mx-auto bg:h-fit bg:my-auto"
-		navButtonClass="bg:text-2xl"
-		slug={currSlug}
-	/>
-	<PageTitle pageTitle={page.data.pageTitle} pageSubtitle={page.data.pageSubtitle} />
-</div>
-<div class="bg:bg-solarized-base-3 bg:dark:bg-solarized-base-03 bg:w-8/12 bg:mx-auto">
+<Main class="bg:mt-0">
+	<Header {links} slug={currSlug} {subLinks} {subSlug} class="bg:row-start-1 bg:col-span-4" />
 	{@render children?.()}
-</div>
+</Main>
