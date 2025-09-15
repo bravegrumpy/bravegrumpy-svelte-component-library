@@ -33,6 +33,7 @@
 		navId?: string;
 		className?: string;
 		navButtonClass?: string;
+		themeToggle?: boolean;
 	}
 
 	const {
@@ -42,7 +43,8 @@
 		class: containerClass = '',
 		navId = 'navigation',
 		className = '',
-		navButtonClass = ''
+		navButtonClass = '',
+		themeToggle = true
 	}: Props = $props();
 
 	// function toggleNav() {
@@ -88,9 +90,11 @@
 				class="bg:h-fit bg:md:w-fit bg:md:max-w-25 bg:md:overflow-clip bg:lg:w-fit bg:lg:max-w-full {navButtonClass}"
 			/>
 		{/each}
-		<ThemeToggle
-			class="bg:w-full bg:h-15 bg:xs:size-15 bg:self-center bg:sm:size-10 bg:sm:self-start bg:lg:self-center"
-			iconSize="30"
-		/>
+		{#if themeToggle}
+			<ThemeToggle
+				class="bg:w-full bg:h-15 bg:xs:size-15 bg:self-center bg:sm:size-10 bg:sm:self-start bg:lg:self-center"
+				iconSize="30"
+			/>
+		{/if}
 	</nav>
 </div>
