@@ -12,7 +12,7 @@
 	let { links, subLinks = '', slug, subSlug }: Props = $props();
 </script>
 
-<header
+<!-- <header
 	class="bg:bg-bravegrumpy-accent1a bg:dark:bg-bravegrumpy-logoPurple bg:col-span-3 bg:grid bg:grid-cols-3"
 >
 	<Logo class="bg:col-span-1" />
@@ -24,4 +24,11 @@
 			<Navigation links={subLinks as ref[]} themeToggle={false} class="bg:ml-5" slug={subSlug} />
 		{/if}
 	</div>
+</header> -->
+<header class="bg:flex bg:flex-col bg:bg-bravegrumpy-accent1a bg:dark:bg-bravegrumpy-logoPurple">
+	<Logo />
+	<Navigation {links} reversed/>
+	{#if subLinks}
+		<Navigation links={subLinks as ref[]} />
+	{/if}
 </header>
