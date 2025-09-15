@@ -39,7 +39,7 @@
 	/>
 </svelte:head>
 
-<Main class="bg:mt-0">
+<Main class="bg:bg-solarized-base-3 bg:dark:bg-solarized-base-2 bg:w-11/12 bg:mx-auto">
 	<Header {links} slug={currSlug} {subLinks} {subSlug} class="bg:row-start-1 bg:col-span-4" />
 	{@render children?.()}
 </Main>
