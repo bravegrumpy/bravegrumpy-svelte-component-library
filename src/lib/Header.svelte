@@ -27,7 +27,7 @@
 </header> -->
 <header class="bg:flex bg:flex-col bg:bg-bravegrumpy-accent1a bg:dark:bg-bravegrumpy-logoPurple">
 	<Logo />
-	<Navigation {links} reversed/>
+	<Navigation {links} reversed />
 	{#if subLinks}
 		<Navigation links={subLinks as ref[]} />
 	{/if}
